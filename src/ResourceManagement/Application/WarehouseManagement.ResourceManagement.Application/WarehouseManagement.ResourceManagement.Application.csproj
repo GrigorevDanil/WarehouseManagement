@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0" />
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.SharedKernel\WarehouseManagement.SharedKernel.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.ResourceManagement.Contracts\WarehouseManagement.ResourceManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\Domain\WarehouseManagement.ResourceManagement.Domain\WarehouseManagement.ResourceManagement.Domain.csproj" />
+    </ItemGroup>
+
+
+</Project>

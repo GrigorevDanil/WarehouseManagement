@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\WarehouseManagement.ResourceManagement.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\WarehouseManagement.ResourceManagement.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Framework\WarehouseManagement.Framework.csproj" />
+      <ProjectReference Include="..\..\Application\WarehouseManagement.ResourceManagement.Application\WarehouseManagement.ResourceManagement.Application.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.ResourceManagement.Contracts\WarehouseManagement.ResourceManagement.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+    </ItemGroup>
+
+</Project>
