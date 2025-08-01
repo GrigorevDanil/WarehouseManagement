@@ -1,6 +1,7 @@
-﻿using System.Reflection;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.OpenApi.Models;
+using WarehouseManagement.ClientManagement.Infrastructure;
+using WarehouseManagement.ClientManagement.Presentation;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.ResourceManagement.Infrastructure;
 using WarehouseManagement.ResourceManagement.Presentation;
@@ -14,6 +15,7 @@ public static class Registration
         services
             .AddSwagger()
             .AddResourceModule(configuration)
+            .AddClientModule(configuration)
             .AddApplicationLayers();
 
         return services;
@@ -51,12 +53,22 @@ public static class Registration
 
         return services;
     }
+    
+    private static IServiceCollection AddClientModule(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddClientManagementPresentation()
+            .AddClientManagementInfrastructure(configuration);
+
+        return services;
+    }
 
     private static IServiceCollection AddApplicationLayers(this IServiceCollection services)
     {
         var assemblies = new[]
         {
             typeof(WarehouseManagement.ResourceManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.ClientManagement.Application.Registration).Assembly,
         };
 
         services.Scan(scan => scan.FromAssemblies(assemblies)

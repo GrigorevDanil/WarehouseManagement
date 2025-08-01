@@ -55,7 +55,7 @@ public class RestoreResourceFromArchiveHandler : ICommandHandler<Guid,  RestoreR
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        _logger.LogInformation("Resource by id `${title}` restored from archive", command.ResourceId);
+        _logger.LogInformation("Resource by id `${id}` restored from archive", command.ResourceId);
         
         return command.ResourceId;
     }

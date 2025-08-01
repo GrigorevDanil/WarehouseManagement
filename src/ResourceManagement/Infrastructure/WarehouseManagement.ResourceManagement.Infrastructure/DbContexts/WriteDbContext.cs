@@ -5,13 +5,13 @@ using WarehouseManagement.ResourceManagement.Domain.Entities;
 
 namespace WarehouseManagement.ResourceManagement.Infrastructure.DbContexts;
 
-public class WriteDbContext(IConfiguration configuration) : DbContext
+public class WriteDbContext(string connectionString) : DbContext
 {
     public DbSet<Resource> Resources => Set<Resource>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(configuration.GetConnectionString(Constants.DATABASE_KEY));
+        optionsBuilder.UseNpgsql(connectionString);
         optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseLoggerFactory(CreateLoggerFactory());
     }

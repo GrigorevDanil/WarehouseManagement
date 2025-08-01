@@ -10,6 +10,7 @@ using WarehouseManagement.ResourceManagement.Application.UseCases.CreateResource
 using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.ResourceManagement.Domain.Entities;
 using WarehouseManagement.SharedKernel;
+using WarehouseManagement.SharedKernel.ValueObjects;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 
 namespace WarehouseManagement.ResourceManagement.Application.UseCases.UpdateResource;
@@ -46,11 +47,6 @@ public class UpdateResourceHandler : ICommandHandler<Guid,  UpdateResourceComman
 
         if (!validationResult.IsValid) 
             return validationResult.ToErrorList();
-        
-        var checkResourceTitleNotExistsResult = await _resourceManagementContract.CheckResourceTitleNotExists(command.Title);
-
-        if (checkResourceTitleNotExistsResult.IsFailure) 
-            return checkResourceTitleNotExistsResult.Error.ToErrorList();
 
         var resourceId = ResourceId.Of(command.ResourceId);
         
@@ -60,15 +56,18 @@ public class UpdateResourceHandler : ICommandHandler<Guid,  UpdateResourceComman
             return resourceResult.Error.ToErrorList();
         
         var resource =  resourceResult.Value;
-
-        var updateTitleResult = resource.UpdateTitle(command.Title);
         
-        if (updateTitleResult.IsFailure)
-            return updateTitleResult.Error.ToErrorList();
+        var checkResourceTitleNotExistsResult = await _resourceManagementContract.CheckResourceTitleNotExists(command.Title);
+
+        if (resource.Title.Value != command.Title)
+            if (checkResourceTitleNotExistsResult.IsFailure) 
+                return checkResourceTitleNotExistsResult.Error.ToErrorList();
+
+        resource.UpdateMainInfo(Title.Of(command.Title).Value);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        _logger.LogInformation("Resource by id `${title}` has updated title", command.ResourceId);
+        _logger.LogInformation("Resource by id `${id}` has updated", command.ResourceId);
         
         return resourceId.Value;
     }

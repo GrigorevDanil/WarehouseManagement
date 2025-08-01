@@ -6,13 +6,13 @@ using WarehouseManagement.ResourceManagement.Contracts.Dtos;
 
 namespace WarehouseManagement.ResourceManagement.Infrastructure.DbContexts;
 
-public class ReadDbContext(IConfiguration configuration) : DbContext, IResourceReadDbContext
+public class ReadDbContext(string connectionString) : DbContext, IResourceReadDbContext
 {
     public IQueryable<ResourceDto> Resources => Set<ResourceDto>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(configuration.GetConnectionString(Constants.DATABASE_KEY));
+        optionsBuilder.UseNpgsql(connectionString);
         optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseLoggerFactory(CreateLoggerFactory());
     }

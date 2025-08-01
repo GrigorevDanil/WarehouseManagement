@@ -15,7 +15,7 @@ public class Title : ValueObject
     public static Result<Title, Error> Of(string value)
     {
         if (string.IsNullOrWhiteSpace(value) || value.Length > MAX_LENGTH) 
-            return Errors.General.ValueIsInvalid(nameof(Title));
+            return Errors.General.ValueIsRequired(nameof(Title));
 
         return new Title(value);
     }

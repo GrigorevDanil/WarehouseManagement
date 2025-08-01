@@ -2,5 +2,6 @@
 
 public enum Modules
 {
-    ResourceManagement
+    ResourceManagement,
+    ClientManagement,
 }

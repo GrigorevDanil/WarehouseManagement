@@ -11,6 +11,9 @@ namespace WarehouseManagement.SharedKernel
                 return Error.Validation("VALUE_IS_INVALID", $"Value {valueString}is invalid", invalidField);
             }
             
+            public static Error ValueIsRequired(string? name = null) =>
+                Error.Validation("LENGTH_IS_INVALID", $"Invalid {name ?? "value"} length");
+            
             public static Error NotFound(Guid? id = null)
             {
                 var forId = id == null ? "" : $" for Id '{id}'";

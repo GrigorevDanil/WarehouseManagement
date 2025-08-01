@@ -54,7 +54,7 @@ public class MoveResourceToArchiveHandler : ICommandHandler<Guid, MoveResourceTo
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        _logger.LogInformation("Resource by id `${title}` moved to archive", command.ResourceId);
+        _logger.LogInformation("Resource by id `${id}` moved to archive", command.ResourceId);
         
         return command.ResourceId;
     }

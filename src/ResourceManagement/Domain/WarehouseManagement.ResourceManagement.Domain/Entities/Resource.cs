@@ -43,20 +43,13 @@ public sealed class Resource : Entity<ResourceId>, IArchived
     }
 
     /// <summary>
-    /// Обновляет название ресурса
+    /// Обновляет информацию о ресурсе
     /// </summary>
     /// <param name="title">Название ресурса</param>
     /// <returns></returns>
-    public UnitResult<Error> UpdateTitle(string title)
+    public void UpdateMainInfo(Title title)
     {
-        var titleResult = Title.Of(title);
-        
-        if (titleResult.IsFailure)
-            return titleResult.Error;
-        
-        Title = titleResult.Value;
-
-        return UnitResult.Success<Error>();
+        Title = title;
     }
         
 }

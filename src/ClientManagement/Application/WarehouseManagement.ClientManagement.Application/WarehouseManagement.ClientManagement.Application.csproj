@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.ClientManagement.Contracts\WarehouseManagement.ClientManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\Domain\WarehouseManagement.ClientManagement.Domain\WarehouseManagement.ClientManagement.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -26,6 +26,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ClientManagement\Infrastructure\WarehouseManagement.ClientManagement.Infrastructure\WarehouseManagement.ClientManagement.Infrastructure.csproj" />
+      <ProjectReference Include="..\ClientManagement\Presentation\WarehouseManagement.ClientManagement.Presentation\WarehouseManagement.ClientManagement.Presentation.csproj" />
       <ProjectReference Include="..\ResourceManagement\Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\ResourceManagement\Presentation\WarehouseManagement.ResourceManagement.Presentation\WarehouseManagement.ResourceManagement.Presentation.csproj" />
       <ProjectReference Include="..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />

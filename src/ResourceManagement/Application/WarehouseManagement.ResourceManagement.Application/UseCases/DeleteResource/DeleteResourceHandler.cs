@@ -6,8 +6,6 @@ using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.Core.Enums;
 using WarehouseManagement.Core.Extensions;
-using WarehouseManagement.ResourceManagement.Application.UseCases.CreateResource;
-using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.ResourceManagement.Domain.Entities;
 using WarehouseManagement.SharedKernel;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
@@ -56,7 +54,7 @@ public class DeleteResourceHandler : ICommandHandler<Guid, DeleteResourceCommand
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        _logger.LogInformation("Resource by id `${title}` deleted", command.ResourceId);
+        _logger.LogInformation("Resource by id `${id}` deleted", command.ResourceId);
         
         return command.ResourceId;
     }

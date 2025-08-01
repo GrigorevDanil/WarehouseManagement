@@ -16,17 +16,20 @@ public static class Registration
         IConfiguration configuration)
     {
         services
-            .AddDbContexts()
+            .AddDbContexts(configuration)
             .AddRepositories()
             .AddServices();
         
         return services;
     }
     
-    private static IServiceCollection AddDbContexts(this IServiceCollection services)
+    private static IServiceCollection AddDbContexts(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<WriteDbContext>();
-        services.AddDbContext<IResourceReadDbContext, ReadDbContext>();
+        services.AddScoped<WriteDbContext>(_ =>
+            new WriteDbContext(configuration.GetConnectionString(Constants.DATABASE_KEY)!));
+        
+        services.AddScoped<IResourceReadDbContext, ReadDbContext>(_ =>
+            new ReadDbContext(configuration.GetConnectionString(Constants.DATABASE_KEY)!));
         
         return services;
     }
