@@ -19,10 +19,10 @@ public class ResourceManagementContract : IResourceManagementContract
 
     public async Task<UnitResult<Error>> CheckResourceTitleNotExists(string title)
     {
-        var foundedSpecies = await _dbContext.Resources
+        var foundedResources = await _dbContext.Resources
             .FirstOrDefaultAsync(s => s.Title == title);
 
-        if (foundedSpecies is null)
+        if (foundedResources is null)
             return Result.Success<Error>();
 
         return Errors.General.AlreadyExists(nameof(Resource), nameof(Title), title);

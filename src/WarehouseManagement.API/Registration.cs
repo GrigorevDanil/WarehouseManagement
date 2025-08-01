@@ -5,6 +5,8 @@ using WarehouseManagement.ClientManagement.Presentation;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.ResourceManagement.Infrastructure;
 using WarehouseManagement.ResourceManagement.Presentation;
+using WarehouseManagement.UnitManagement.Infrastructure;
+using WarehouseManagement.UnitManagement.Presentation;
 
 namespace WarehouseManagement.API;
 
@@ -16,6 +18,7 @@ public static class Registration
             .AddSwagger()
             .AddResourceModule(configuration)
             .AddClientModule(configuration)
+            .AddUnitModule(configuration)
             .AddApplicationLayers();
 
         return services;
@@ -62,6 +65,15 @@ public static class Registration
 
         return services;
     }
+    
+    private static IServiceCollection AddUnitModule(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddUnitManagementPresentation()
+            .AddUnitManagementInfrastructure(configuration);
+
+        return services;
+    }
 
     private static IServiceCollection AddApplicationLayers(this IServiceCollection services)
     {
@@ -69,6 +81,7 @@ public static class Registration
         {
             typeof(WarehouseManagement.ResourceManagement.Application.Registration).Assembly,
             typeof(WarehouseManagement.ClientManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.UnitManagement.Application.Registration).Assembly,
         };
 
         services.Scan(scan => scan.FromAssemblies(assemblies)

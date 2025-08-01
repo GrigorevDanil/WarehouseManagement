@@ -10,68 +10,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c5c45f-ed5d-41a3-9b24-b7b88edcaf60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Interfaces/IClientReadDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Queries/GetClientById/GetClientByIdHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Queries/GetClientById/GetClientByIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Queries/GetClientsWithPagination/GetClientsWithPaginationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Queries/GetClientsWithPagination/GetClientsWithPaginationQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/Registration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/CreateClient/CreateClientCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/CreateClient/CreateClientHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/CreateClient/CreateClientValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/DeleteClient/DeleteClientCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/DeleteClient/DeleteClientHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/DeleteClient/DeleteClientValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/MoveClientToArchive/MoveClientToArchiveCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/MoveClientToArchive/MoveClientToArchiveHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/MoveClientToArchive/MoveClientToArchiveValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/RestoreClientFromArchive/RestoreClientFromArchiveCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/RestoreClientFromArchive/RestoreClientFromArchiveHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/RestoreClientFromArchive/RestoreClientFromArchiveValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/WarehouseManagement.ClientManagement.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/Dtos/ClientDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/IClientManagementContract.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/Requests/CreateClientRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/Requests/GetClientsWithPaginationRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/Requests/UpdateClientRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Contracts/WarehouseManagement.ClientManagement.Contracts/WarehouseManagement.ClientManagement.Contracts.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Domain/WarehouseManagement.ClientManagement.Domain/Entities/Client.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Domain/WarehouseManagement.ClientManagement.Domain/WarehouseManagement.ClientManagement.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Configurations/Read/ClientDtoConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Configurations/Write/ClientConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Constants.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Registration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Repositories/ClientRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/UnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/WarehouseManagement.ClientManagement.Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientManagementContract.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/Registration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/WarehouseManagement.ClientManagement.Presentation.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Address.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Ids/ClientId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Ids/UnitId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Interfaces/IUnitReadDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitById/GetUnitByIdHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitById/GetUnitByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitsWithPaginations/GetUnitsWithPaginationsHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitsWithPaginations/GetUnitsWithPaginationsQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Registration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/WarehouseManagement.UnitManagement.Application.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Dtos/UnitDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/IUnitManagementContract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/CreateUnitRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/GetUnitsWithPaginationsRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/UpdateUnitRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/WarehouseManagement.UnitManagement.Contracts.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/Entities/Unit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/WarehouseManagement.UnitManagement.Domain.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Configurations/Read/UnitDtoConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Configurations/Write/UnitConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Registrations.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Repositories/UnitRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/UnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/WarehouseManagement.UnitManagement.Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/Registrations.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitManagementContract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/WarehouseManagement.UnitManagement.Presentation.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarehouseManagement.sln" beforeDir="false" afterPath="$PROJECT_DIR$/WarehouseManagement.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarehouseManagement.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WarehouseManagement.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbscript.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/dbscript.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/DeleteResource/DeleteResourceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/DeleteResource/DeleteResourceHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/MoveResourceToArchive/MoveResourceToArchiveHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/MoveResourceToArchive/MoveResourceToArchiveHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/RestoreResourceFromArchive/RestoreResourceFromArchiveHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/RestoreResourceFromArchive/RestoreResourceFromArchiveHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Domain/WarehouseManagement.ResourceManagement.Domain/Entities/Resource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Domain/WarehouseManagement.ResourceManagement.Domain/Entities/Resource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/ReadDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/WriteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250731164650_ResourceManagement_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250731164650_ResourceManagement_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Registration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Registration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801090216_ClientManagement_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801090216_ClientManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientManagementContract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/Queries/GetResourcesById/GetResourcesByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/Queries/GetResourcesById/GetResourcesByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801090211_ResourceManagement_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801090211_ResourceManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Presentation/WarehouseManagement.ResourceManagement.Presentation/ResourceManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Presentation/WarehouseManagement.ResourceManagement.Presentation/ResourceManagementContract.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Enums/Modules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Enums/Modules.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/Errors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/Errors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Title.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Title.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WarehouseManagement.API/Registration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/WarehouseManagement.API/Registration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WarehouseManagement.API/WarehouseManagement.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/WarehouseManagement.API/WarehouseManagement.API.csproj" afterDir="false" />
     </list>
@@ -217,7 +212,7 @@
       <workItem from="1753940801696" duration="23823000" />
       <workItem from="1753994381579" duration="2189000" />
       <workItem from="1754030871676" duration="5167000" />
-      <workItem from="1754036916205" duration="14686000" />
+      <workItem from="1754036916205" duration="23856000" />
     </task>
     <servers />
   </component>

@@ -69,8 +69,8 @@ public class UpdateClientHandler : ICommandHandler<Guid, UpdateClientCommand>
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        _logger.LogInformation("Client by id `${title}` has updated", command.ClientId);
+        _logger.LogInformation("Client by id `${id}` has updated", command.ClientId);
         
-        return clientId.Value;
+        return command.ClientId;
     }
 }

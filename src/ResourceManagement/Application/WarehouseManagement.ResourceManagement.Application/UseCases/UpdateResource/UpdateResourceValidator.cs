@@ -8,6 +8,7 @@ public class UpdateResourceValidator : AbstractValidator<UpdateResourceCommand>
 {
     public UpdateResourceValidator()
     {
+        RuleFor(x => x.ResourceId).MustBeValidGuid();
         RuleFor(x => x.Title).MustBeValueObject(Title.Of);
     }
 }

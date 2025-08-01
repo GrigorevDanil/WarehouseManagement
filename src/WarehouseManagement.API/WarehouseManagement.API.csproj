@@ -31,6 +31,8 @@
       <ProjectReference Include="..\ResourceManagement\Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\ResourceManagement\Presentation\WarehouseManagement.ResourceManagement.Presentation\WarehouseManagement.ResourceManagement.Presentation.csproj" />
       <ProjectReference Include="..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\UnitManagement\Infrastructure\WarehouseManagement.UnitManagement.Infrastructure\WarehouseManagement.UnitManagement.Infrastructure.csproj" />
+      <ProjectReference Include="..\UnitManagement\Presentation\WarehouseManagement.UnitManagement.Presentation\WarehouseManagement.UnitManagement.Presentation.csproj" />
     </ItemGroup>
     
 </Project>

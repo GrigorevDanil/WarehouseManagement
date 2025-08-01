@@ -19,10 +19,10 @@ public class ClientManagementContract : IClientManagementContract
 
     public async Task<UnitResult<Error>> CheckClientTitleNotExists(string title)
     {
-        var foundedSpecies = await _dbContext.Clients
+        var foundedClients = await _dbContext.Clients
             .FirstOrDefaultAsync(s => s.Title == title);
 
-        if (foundedSpecies is null)
+        if (foundedClients is null)
             return Result.Success<Error>();
 
         return Errors.General.AlreadyExists(nameof(Client), nameof(Title), title);

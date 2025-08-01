@@ -19,7 +19,6 @@ public class GetResourcesByIdHandler : IQueryHandlerWithResult<ResourceDto, GetR
     
     public async Task<Result<ResourceDto, ErrorList>> Handle(GetResourcesByIdQuery query, CancellationToken cancellationToken = default)
     {
-        
         var resource = await _dbContext.Resources.FirstOrDefaultAsync(x => x.Id == query.ResourceId, cancellationToken);
         
         if (resource == null) 
