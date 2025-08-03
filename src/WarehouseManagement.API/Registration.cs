@@ -3,6 +3,8 @@ using Microsoft.OpenApi.Models;
 using WarehouseManagement.ClientManagement.Infrastructure;
 using WarehouseManagement.ClientManagement.Presentation;
 using WarehouseManagement.Core.Abstractions.Messages;
+using WarehouseManagement.IncomeProcessing.Infrastructure;
+using WarehouseManagement.IncomeProcessing.Presentation;
 using WarehouseManagement.ResourceManagement.Infrastructure;
 using WarehouseManagement.ResourceManagement.Presentation;
 using WarehouseManagement.UnitManagement.Infrastructure;
@@ -19,6 +21,7 @@ public static class Registration
             .AddResourceModule(configuration)
             .AddClientModule(configuration)
             .AddUnitModule(configuration)
+            .AddIncomeProcessingModule(configuration)
             .AddApplicationLayers();
 
         return services;
@@ -74,6 +77,15 @@ public static class Registration
 
         return services;
     }
+    
+    private static IServiceCollection AddIncomeProcessingModule(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddIncomeProcessingPresentation()
+            .AddIncomeProcessingInfrastructure(configuration);
+
+        return services;
+    }
 
     private static IServiceCollection AddApplicationLayers(this IServiceCollection services)
     {
@@ -82,6 +94,7 @@ public static class Registration
             typeof(WarehouseManagement.ResourceManagement.Application.Registration).Assembly,
             typeof(WarehouseManagement.ClientManagement.Application.Registration).Assembly,
             typeof(WarehouseManagement.UnitManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.IncomeProcessing.Application.Registration).Assembly,
         };
 
         services.Scan(scan => scan.FromAssemblies(assemblies)

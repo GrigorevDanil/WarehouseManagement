@@ -20,6 +20,8 @@ public class WriteDbContext(string connectionString) : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Write") ?? false);
+        
+        modelBuilder.HasDefaultSchema("client-management");
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

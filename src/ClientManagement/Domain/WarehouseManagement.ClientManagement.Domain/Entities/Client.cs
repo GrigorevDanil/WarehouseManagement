@@ -12,9 +12,8 @@ public class Client : Entity<ClientId>, IArchived
     private Client(ClientId id) : base(id) { }
 
     /// <summary> Конструктор клиента </summary>
-    public Client(Title title, Address address)
+    public Client(Title title, Address address) : base(ClientId.Create())
     {
-        Id = ClientId.Create();
         Title = title;
         Address = address;
         IsArchived = IsArchived.Active;

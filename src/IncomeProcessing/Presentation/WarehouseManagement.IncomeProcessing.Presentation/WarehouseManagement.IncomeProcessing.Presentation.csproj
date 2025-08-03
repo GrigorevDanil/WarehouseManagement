@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\WarehouseManagement.IncomeProcessing.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\WarehouseManagement.IncomeProcessing.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Framework\WarehouseManagement.Framework.csproj" />
+      <ProjectReference Include="..\..\Application\WarehouseManagement.IncomeProcessing.Application\WarehouseManagement.IncomeProcessing.Application.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.IncomeProcessing.Contracts\WarehouseManagement.IncomeProcessing.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

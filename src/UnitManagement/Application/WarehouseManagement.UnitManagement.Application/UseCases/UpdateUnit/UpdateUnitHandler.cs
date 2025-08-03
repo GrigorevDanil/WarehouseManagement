@@ -56,11 +56,13 @@ public class UpdateUnitHandler : ICommandHandler<Guid, UpdateUnitCommand>
         
         var unit = unitResult.Value;
         
-        var checkUnitTitleNotExistsResult = await _unitManagementContract.CheckUnitTitleNotExists(command.Title);
-
         if (unit.Title.Value != command.Title)
+        {
+            var checkUnitTitleNotExistsResult = await _unitManagementContract.CheckUnitTitleNotExists(command.Title);
+            
             if (checkUnitTitleNotExistsResult.IsFailure) 
                 return checkUnitTitleNotExistsResult.Error.ToErrorList();
+        }
         
         unit.UpdateMainInfo(
             Title.Of(command.Title).Value

@@ -24,6 +24,29 @@ public static class QueriesExtensions
             Items = items,
             PageSize = pageSize,
             Page = page,
+            TotalCount = totalCount
+        };
+    }
+    
+    public static PagedList<T> ToPagedList<T>(
+        this IEnumerable<T> source,
+        int page,
+        int pageSize)
+    {
+        var list = source.ToList();
+        var totalCount = list.Count;
+
+        var items = list
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+        
+        return new PagedList<T>
+        {
+            Items = items,
+            PageSize = pageSize,
+            Page = page,
+            TotalCount = totalCount
         };
     }
     

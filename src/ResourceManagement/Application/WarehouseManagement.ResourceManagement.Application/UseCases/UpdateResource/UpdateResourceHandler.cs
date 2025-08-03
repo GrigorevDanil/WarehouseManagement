@@ -57,11 +57,13 @@ public class UpdateResourceHandler : ICommandHandler<Guid,  UpdateResourceComman
         
         var resource =  resourceResult.Value;
         
-        var checkResourceTitleNotExistsResult = await _resourceManagementContract.CheckResourceTitleNotExists(command.Title);
-
         if (resource.Title.Value != command.Title)
+        {
+            var checkResourceTitleNotExistsResult = await _resourceManagementContract.CheckResourceTitleNotExists(command.Title);
+            
             if (checkResourceTitleNotExistsResult.IsFailure) 
                 return checkResourceTitleNotExistsResult.Error.ToErrorList();
+        }
 
         resource.UpdateMainInfo(Title.Of(command.Title).Value);
         

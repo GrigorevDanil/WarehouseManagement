@@ -18,6 +18,7 @@ namespace WarehouseManagement.UnitManagement.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("unit-management")
                 .HasAnnotation("ProductVersion", "9.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -61,7 +62,7 @@ namespace WarehouseManagement.UnitManagement.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Units");
+                    b.ToTable("Units", "unit-management");
                 });
 #pragma warning restore 612, 618
         }

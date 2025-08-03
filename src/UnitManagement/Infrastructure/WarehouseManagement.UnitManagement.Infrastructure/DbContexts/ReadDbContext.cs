@@ -14,6 +14,8 @@ public class ReadDbContext(string connectionString) : DbContext, IUnitReadDbCont
         optionsBuilder.UseNpgsql(connectionString);
         optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseLoggerFactory(CreateLoggerFactory());
+        
+        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,6 +23,8 @@ public class ReadDbContext(string connectionString) : DbContext, IUnitReadDbCont
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
+        
+        modelBuilder.HasDefaultSchema("unit-management");
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

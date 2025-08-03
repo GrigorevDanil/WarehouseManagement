@@ -11,8 +11,12 @@ namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "client-management");
+
             migrationBuilder.CreateTable(
                 name: "Clients",
+                schema: "client-management",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
@@ -31,7 +35,8 @@ namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Clients");
+                name: "Clients",
+                schema: "client-management");
         }
     }
 }

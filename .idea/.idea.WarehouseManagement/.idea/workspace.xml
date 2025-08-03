@@ -10,63 +10,101 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0c5c45f-ed5d-41a3-9b24-b7b88edcaf60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Ids/UnitId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Interfaces/IUnitReadDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitById/GetUnitByIdHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitById/GetUnitByIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitsWithPaginations/GetUnitsWithPaginationsHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Queries/GetUnitsWithPaginations/GetUnitsWithPaginationsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/Registration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/CreateUnit/CreateUnitValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/DeleteUnit/DeleteUnitValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/MoveUnitToArchive/MoveUnitToArchiveValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/RestoreUnitFromArchive/RestoreUnitFromArchiveValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/WarehouseManagement.UnitManagement.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Dtos/UnitDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/IUnitManagementContract.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/CreateUnitRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/GetUnitsWithPaginationsRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/Requests/UpdateUnitRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/WarehouseManagement.UnitManagement.Contracts.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/Entities/Unit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/WarehouseManagement.UnitManagement.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Configurations/Read/UnitDtoConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Configurations/Write/UnitConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Constants.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Registrations.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Repositories/UnitRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/UnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/WarehouseManagement.UnitManagement.Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/Registrations.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitManagementContract.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/WarehouseManagement.UnitManagement.Presentation.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Interfaces/IIncomeProcessingReadDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Queries/GetIncomeDocumentById/GetIncomeDocumentByIdHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Queries/GetIncomeDocumentById/GetIncomeDocumentByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Queries/GetIncomeDocumentsWithPagination/GetIncomeDocumentsWithPaginationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Queries/GetIncomeDocumentsWithPagination/GetIncomeDocumentsWithPaginationQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Registration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/AddIncomeResource/AddIncomeResourceCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/AddIncomeResource/AddIncomeResourceHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/AddIncomeResource/AddIncomeResourceValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/CreateIncomeDocument/CreateIncomeDocumentCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/CreateIncomeDocument/CreateIncomeDocumentHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/CreateIncomeDocument/CreateIncomeDocumentValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeDocument/DeleteIncomeDocumentCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeDocument/DeleteIncomeDocumentHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeDocument/DeleteIncomeDocumentValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeResource/DeleteIncomeResourceCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeResource/DeleteIncomeResourceHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/DeleteIncomeResource/DeleteIncomeResourceValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeDocument/UpdateIncomeDocumentCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeDocument/UpdateIncomeDocumentHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeDocument/UpdateIncomeDocumentValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeResource/UpdateIncomeResourceCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeResource/UpdateIncomeResourceHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeResource/UpdateIncomeResourceValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/WarehouseManagement.IncomeProcessing.Application.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Dtos/IncomeDocumentDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Dtos/IncomeResourceDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/IIncomeProcessingContract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/AddIncomeResourceRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/CreateIncomeDocumentRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/GetIncomeDocumentByIdRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/GetIncomeDocumentsWithPaginationRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/UpdateIncomeDocumentRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/Requests/UpdateIncomeResourceRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Contracts/WarehouseManagement.IncomeProcessing.Contracts/WarehouseManagement.IncomeProcessing.Contracts.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Domain/WarehouseManagement.IncomeProcessing.Domain/Aggregates/IncomeDocument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Domain/WarehouseManagement.IncomeProcessing.Domain/Entities/IncomeResource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Domain/WarehouseManagement.IncomeProcessing.Domain/Responses/IncomeDocumentResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Domain/WarehouseManagement.IncomeProcessing.Domain/Responses/IncomeResourceResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Domain/WarehouseManagement.IncomeProcessing.Domain/WarehouseManagement.IncomeProcessing.Domain.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Configurations/Read/IncomeDocumentDtoConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Configurations/Read/IncomeResourceDtoConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Configurations/Write/IncomeDocumentConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Configurations/Write/IncomeResourceConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Registration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/Repositories/IncomeDocumentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/UnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure/WarehouseManagement.IncomeProcessing.Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Presentation/WarehouseManagement.IncomeProcessing.Presentation/IncomeDocumentController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Presentation/WarehouseManagement.IncomeProcessing.Presentation/IncomeProcessingContract.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Presentation/WarehouseManagement.IncomeProcessing.Presentation/Registration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncomeProcessing/Presentation/WarehouseManagement.IncomeProcessing.Presentation/WarehouseManagement.IncomeProcessing.Presentation.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/CreatedAt.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Ids/IncomeDocumentId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Ids/IncomeResourceId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/NumDocument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/Stock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarehouseManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WarehouseManagement.sln" beforeDir="false" afterPath="$PROJECT_DIR$/WarehouseManagement.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarehouseManagement.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WarehouseManagement.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbscript.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/dbscript.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Application/WarehouseManagement.ClientManagement.Application/UseCases/UpdateClient/UpdateClientHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801090216_ClientManagement_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801090216_ClientManagement_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Presentation/WarehouseManagement.ClientManagement.Presentation/ClientManagementContract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/Queries/GetResourcesById/GetResourcesByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/Queries/GetResourcesById/GetResourcesByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801090211_ResourceManagement_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801090211_ResourceManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Domain/WarehouseManagement.ClientManagement.Domain/Entities/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Domain/WarehouseManagement.ClientManagement.Domain/Entities/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/ReadDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/WriteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801165216_ClientManagement_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/20250801165216_ClientManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientManagement/Infrastructure/WarehouseManagement.ClientManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Application/WarehouseManagement.ResourceManagement.Application/UseCases/UpdateResource/UpdateResourceHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Contracts/WarehouseManagement.ResourceManagement.Contracts/IResourceManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Contracts/WarehouseManagement.ResourceManagement.Contracts/IResourceManagementContract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Domain/WarehouseManagement.ResourceManagement.Domain/Entities/Resource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Domain/WarehouseManagement.ResourceManagement.Domain/Entities/Resource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/ReadDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/WriteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801165210_ResourceManagement_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/20250801165210_ResourceManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Infrastructure/WarehouseManagement.ResourceManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ResourceManagement/Presentation/WarehouseManagement.ResourceManagement.Presentation/ResourceManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManagement/Presentation/WarehouseManagement.ResourceManagement.Presentation/ResourceManagementContract.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Enums/Modules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Enums/Modules.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Extensions/QueriesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Extensions/QueriesExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/Errors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/Errors.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Application/WarehouseManagement.UnitManagement.Application/UseCases/UpdateUnit/UpdateUnitHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/IUnitManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Contracts/WarehouseManagement.UnitManagement.Contracts/IUnitManagementContract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/Entities/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Domain/WarehouseManagement.UnitManagement.Domain/Entities/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/ReadDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/ReadDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/WriteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/DbContexts/WriteDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Migrations/20250801165222_UnitManagement_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Migrations/20250801165222_UnitManagement_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Infrastructure/WarehouseManagement.UnitManagement.Infrastructure/Migrations/WriteDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitManagementContract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitManagement/Presentation/WarehouseManagement.UnitManagement.Presentation/UnitManagementContract.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WarehouseManagement.API/Registration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/WarehouseManagement.API/Registration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WarehouseManagement.API/WarehouseManagement.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/WarehouseManagement.API/WarehouseManagement.API.csproj" afterDir="false" />
     </list>
@@ -97,6 +135,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2c71ee77438a45e7876fc63344b8ac86130918/26/140bdd58/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/589c63571ddc4376b95d68fe1bd60b20122a00/13/e4f89f07/Entity`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/13e79b2a7b78394ccf591d3454bff5bfb14e692da011a7e38b66c2312b365a/String.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/214d8520f2fd2e5eafa6f19f052e5f368a59784eaee1befcfbb8cf396ede838/MethodBase.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/24bf053b011762d5cc33569ef5856f227491a367f3bad312b38998a75627f8/MemberExpression.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/294078ecfce6fdb942ecfee089f09717de7a6fcfe5efd9fdb6f4f93c0fb4813/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/394cf11a64687141fd58fb926ff8b3d5a299eba3bbadaf2de9b93928d523d4/Type.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d42d5f1712377031e2892d1c29db5c23b8c7d49b9dc632fbf463bd930a8/RuntimeHelpers.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aeae22b1c972504e8888d248c7af57e956db03461ad886a20159e93a0d118f3/ParameterExpression.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b57427c37fcbd61dde2a6082502b8b1ac5124dafef4895130b269fa121bf5a/DefaultValidatorExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce37be1a06b16c6faa02038d2cc477dd3bca5b217ceeb41c5f2ad45c1bf9/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,7 +153,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -212,7 +256,12 @@
       <workItem from="1753940801696" duration="23823000" />
       <workItem from="1753994381579" duration="2189000" />
       <workItem from="1754030871676" duration="5167000" />
-      <workItem from="1754036916205" duration="23856000" />
+      <workItem from="1754036916205" duration="30553000" />
+      <workItem from="1754116615559" duration="9675000" />
+      <workItem from="1754131009557" duration="8954000" />
+      <workItem from="1754146413664" duration="22533000" />
+      <workItem from="1754205210991" duration="8443000" />
+      <workItem from="1754221220249" duration="4030000" />
     </task>
     <servers />
   </component>
@@ -220,6 +269,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -276,6 +336,84 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/Queries/GetIncomeDocumentsWithPagination/GetIncomeDocumentsWithPaginationHandler.cs</url>
+          <line>33</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\Queries\GetIncomeDocumentsWithPagination\GetIncomeDocumentsWithPaginationHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="1549" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1602" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/AddIncomeResource/AddIncomeResourceHandler.cs</url>
+          <line>56</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\UseCases\AddIncomeResource\AddIncomeResourceHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="2534" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2616" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Shared/WarehouseManagement.SharedKernel/ValueObjects/CreatedAt.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\Shared\WarehouseManagement.SharedKernel\ValueObjects\CreatedAt.cs" containingFunctionPresentation="Method 'Of'">
+            <startOffsets>
+              <option value="386" />
+            </startOffsets>
+            <endOffsets>
+              <option value="409" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeDocument/UpdateIncomeDocumentHandler.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\UseCases\UpdateIncomeDocument\UpdateIncomeDocumentHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="1903" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1985" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Shared/WarehouseManagement.Core/Extensions/QueriesExtensions.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\Shared\WarehouseManagement.Core\Extensions\QueriesExtensions.cs" containingFunctionPresentation="Method 'ToPagedList'">
+            <startOffsets>
+              <option value="966" />
+            </startOffsets>
+            <endOffsets>
+              <option value="993" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/IncomeProcessing/Application/WarehouseManagement.IncomeProcessing.Application/UseCases/UpdateIncomeResource/UpdateIncomeResourceHandler.cs</url>
+          <line>52</line>
+          <properties documentPath="C:\Users\Default.WIN-UIOHH4MJ9D8\Desktop\Projects\WarehouseManagement\src\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\UseCases\UpdateIncomeResource\UpdateIncomeResourceHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="2302" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2384" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,39 +6,35 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WarehouseManagement.ClientManagement.Infrastructure.DbContexts;
+using WarehouseManagement.ResourceManagement.Infrastructure.DbContexts;
 
 #nullable disable
 
-namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
+namespace WarehouseManagement.ResourceManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(WriteDbContext))]
-    [Migration("20250801165216_ClientManagement_Initial")]
-    partial class ClientManagement_Initial
+    [Migration("20250802175439_ResourceManagement_Initial")]
+    partial class ResourceManagement_Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("resource-management")
                 .HasAnnotation("ProductVersion", "9.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("WarehouseManagement.ClientManagement.Domain.Entities.Client", b =>
+            modelBuilder.Entity("WarehouseManagement.ResourceManagement.Domain.Entities.Resource", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasDefaultValueSql("gen_random_uuid()");
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(170)
-                        .HasColumnType("character varying(170)");
-
-                    b.ComplexProperty<Dictionary<string, object>>("ArchivedAt", "WarehouseManagement.ClientManagement.Domain.Entities.Client.ArchivedAt#ArchivedAt", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("ArchivedAt", "WarehouseManagement.ResourceManagement.Domain.Entities.Resource.ArchivedAt#ArchivedAt", b1 =>
                         {
                             b1.IsRequired();
 
@@ -47,7 +43,7 @@ namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
                                 .HasColumnName("ArchivedAt");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("IsArchived", "WarehouseManagement.ClientManagement.Domain.Entities.Client.IsArchived#IsArchived", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("IsArchived", "WarehouseManagement.ResourceManagement.Domain.Entities.Resource.IsArchived#IsArchived", b1 =>
                         {
                             b1.IsRequired();
 
@@ -56,7 +52,7 @@ namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
                                 .HasColumnName("IsArchived");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("Title", "WarehouseManagement.ClientManagement.Domain.Entities.Client.Title#Title", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("Title", "WarehouseManagement.ResourceManagement.Domain.Entities.Resource.Title#Title", b1 =>
                         {
                             b1.IsRequired();
 
@@ -69,7 +65,7 @@ namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Resources", "resource-management");
                 });
 #pragma warning restore 612, 618
         }

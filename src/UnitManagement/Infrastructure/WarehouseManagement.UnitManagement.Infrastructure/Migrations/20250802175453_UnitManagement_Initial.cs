@@ -3,16 +3,20 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WarehouseManagement.ResourceManagement.Infrastructure.Migrations
+namespace WarehouseManagement.UnitManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class ResourceManagement_Initial : Migration
+    public partial class UnitManagement_Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "unit-management");
+
             migrationBuilder.CreateTable(
-                name: "Resources",
+                name: "Units",
+                schema: "unit-management",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
@@ -22,7 +26,7 @@ namespace WarehouseManagement.ResourceManagement.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Resources", x => x.Id);
+                    table.PrimaryKey("PK_Units", x => x.Id);
                 });
         }
 
@@ -30,7 +34,8 @@ namespace WarehouseManagement.ResourceManagement.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Resources");
+                name: "Units",
+                schema: "unit-management");
         }
     }
 }

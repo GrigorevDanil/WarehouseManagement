@@ -4,5 +4,6 @@ public enum Modules
 {
     ResourceManagement,
     ClientManagement,
-    UnitManagement
+    UnitManagement,
+    IncomeProcessing
 }

@@ -116,6 +116,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.UnitMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.UnitManagement.Presentation", "src\UnitManagement\Presentation\WarehouseManagement.UnitManagement.Presentation\WarehouseManagement.UnitManagement.Presentation.csproj", "{9A3B3AD0-62D5-4AD9-918F-0F50F5708B05}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IncomeProcessing", "IncomeProcessing", "{1A2C80B9-36CB-4283-BD7F-C423C5A01103}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{3F62EB54-38F9-48B4-BACA-540B9176109E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{6FB445BA-195F-4D4A-8A64-533733CD95B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D5427CDE-ED87-4FAA-BB94-28E8C274D4BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{811CEE36-E527-432A-8C48-D295316DE21C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C2B939E9-FA5B-43CE-9C68-DB558D5555FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.IncomeProcessing.Application", "src\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\WarehouseManagement.IncomeProcessing.Application.csproj", "{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.IncomeProcessing.Contracts", "src\IncomeProcessing\Contracts\WarehouseManagement.IncomeProcessing.Contracts\WarehouseManagement.IncomeProcessing.Contracts.csproj", "{5ACBF66C-26C6-4B7F-8648-1E3C55282069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.IncomeProcessing.Domain", "src\IncomeProcessing\Domain\WarehouseManagement.IncomeProcessing.Domain\WarehouseManagement.IncomeProcessing.Domain.csproj", "{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.IncomeProcessing.Infrastructure", "src\IncomeProcessing\Infrastructure\WarehouseManagement.IncomeProcessing.Infrastructure\WarehouseManagement.IncomeProcessing.Infrastructure.csproj", "{E60F9F18-A86E-4E46-9742-98E2558228A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.IncomeProcessing.Presentation", "src\IncomeProcessing\Presentation\WarehouseManagement.IncomeProcessing.Presentation\WarehouseManagement.IncomeProcessing.Presentation.csproj", "{6C3A785E-884F-4351-9AB8-1EE9683EB014}"
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,6 +221,26 @@ Global
 		{9A3B3AD0-62D5-4AD9-918F-0F50F5708B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3B3AD0-62D5-4AD9-918F-0F50F5708B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3B3AD0-62D5-4AD9-918F-0F50F5708B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACBF66C-26C6-4B7F-8648-1E3C55282069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACBF66C-26C6-4B7F-8648-1E3C55282069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACBF66C-26C6-4B7F-8648-1E3C55282069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACBF66C-26C6-4B7F-8648-1E3C55282069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60F9F18-A86E-4E46-9742-98E2558228A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60F9F18-A86E-4E46-9742-98E2558228A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60F9F18-A86E-4E46-9742-98E2558228A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60F9F18-A86E-4E46-9742-98E2558228A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3A785E-884F-4351-9AB8-1EE9683EB014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3A785E-884F-4351-9AB8-1EE9683EB014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3A785E-884F-4351-9AB8-1EE9683EB014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3A785E-884F-4351-9AB8-1EE9683EB014}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{262E932F-8434-4F5C-9BA2-15A57B072621} = {987E2B27-5EB3-43D5-9416-88CD2E3B8DF6}
@@ -239,5 +281,16 @@ Global
 		{3C16488E-4F75-4782-9BFE-42182FF5025E} = {D437F4D9-09D7-44F1-9832-91064D0A0480}
 		{CF41C10D-AB07-46B8-B006-29A0CB01B087} = {A260B139-6983-4C92-83C6-F05B73C9E797}
 		{9A3B3AD0-62D5-4AD9-918F-0F50F5708B05} = {10D25447-0E12-4D41-8146-EB8BF242342A}
+		{1A2C80B9-36CB-4283-BD7F-C423C5A01103} = {987E2B27-5EB3-43D5-9416-88CD2E3B8DF6}
+		{3F62EB54-38F9-48B4-BACA-540B9176109E} = {1A2C80B9-36CB-4283-BD7F-C423C5A01103}
+		{6FB445BA-195F-4D4A-8A64-533733CD95B9} = {1A2C80B9-36CB-4283-BD7F-C423C5A01103}
+		{D5427CDE-ED87-4FAA-BB94-28E8C274D4BF} = {1A2C80B9-36CB-4283-BD7F-C423C5A01103}
+		{811CEE36-E527-432A-8C48-D295316DE21C} = {1A2C80B9-36CB-4283-BD7F-C423C5A01103}
+		{C2B939E9-FA5B-43CE-9C68-DB558D5555FA} = {1A2C80B9-36CB-4283-BD7F-C423C5A01103}
+		{812288C6-D4B2-4F7D-87B9-80CC9B7BDE04} = {3F62EB54-38F9-48B4-BACA-540B9176109E}
+		{5ACBF66C-26C6-4B7F-8648-1E3C55282069} = {6FB445BA-195F-4D4A-8A64-533733CD95B9}
+		{2EFBDA3A-5861-49C1-B1BB-BE2FB2444879} = {811CEE36-E527-432A-8C48-D295316DE21C}
+		{E60F9F18-A86E-4E46-9742-98E2558228A7} = {D5427CDE-ED87-4FAA-BB94-28E8C274D4BF}
+		{6C3A785E-884F-4351-9AB8-1EE9683EB014} = {C2B939E9-FA5B-43CE-9C68-DB558D5555FA}
 	EndGlobalSection
 EndGlobal

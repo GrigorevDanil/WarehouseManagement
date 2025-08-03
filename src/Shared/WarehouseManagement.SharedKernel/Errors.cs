@@ -35,6 +35,15 @@ namespace WarehouseManagement.SharedKernel
 
         }
         
+        public static class Archive
+        {
+            public static Error ArchiveRecord(string name, Guid id)
+            {
+                return Error.Conflict("RECORD_IN_ARCHIVE", $"{name} by {id} in archive");
+            }
+
+        }
+        
         public static class Server
         {
             public static Error InternalServer(string message)

@@ -11,10 +11,9 @@ public class Unit : Entity<UnitId>, IArchived
     /// <summary> Конструктор для поддержки EF. Не использовать! </summary>
     private Unit(UnitId id) : base(id) { }
 
-    /// <summary> Конструктор ресурса </summary>
-    public Unit(Title title)
+    /// <summary> Конструктор единицы измерения </summary>
+    public Unit(Title title) : base(UnitId.Create())
     {
-        Id = UnitId.Create();
         Title = title;
         IsArchived = IsArchived.Active;
     }

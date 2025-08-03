@@ -56,11 +56,13 @@ public class UpdateClientHandler : ICommandHandler<Guid, UpdateClientCommand>
         
         var client = clientResult.Value;
         
-        var checkClientTitleNotExistsResult = await _clientManagementContract.CheckClientTitleNotExists(command.Title);
-
         if (client.Title.Value != command.Title)
+        {
+            var checkClientTitleNotExistsResult = await _clientManagementContract.CheckClientTitleNotExists(command.Title);
+
             if (checkClientTitleNotExistsResult.IsFailure) 
                 return checkClientTitleNotExistsResult.Error.ToErrorList();
+        }
         
         client.UpdateMainInfo(
             Title.Of(command.Title).Value,

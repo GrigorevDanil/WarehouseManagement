@@ -6,15 +6,14 @@ using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 namespace WarehouseManagement.ResourceManagement.Domain.Entities;
 
 /// <summary> Сущность ресурса </summary>
-public sealed class Resource : Entity<ResourceId>, IArchived
+public class Resource : Entity<ResourceId>, IArchived
 {
     /// <summary> Конструктор для поддержки EF. Не использовать! </summary>
     private Resource(ResourceId id) : base(id) { }
 
     /// <summary> Конструктор ресурса </summary>
-    public Resource(Title title)
+    public Resource(Title title) : base(ResourceId.Create())
     {
-        Id = ResourceId.Create();
         Title = title;
         IsArchived = IsArchived.Active;
     }
