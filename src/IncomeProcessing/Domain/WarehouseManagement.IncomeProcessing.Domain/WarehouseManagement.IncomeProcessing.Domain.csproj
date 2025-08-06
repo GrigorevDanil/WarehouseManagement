@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
       <ProjectReference Include="..\..\..\Shared\WarehouseManagement.SharedKernel\WarehouseManagement.SharedKernel.csproj" />
     </ItemGroup>
 

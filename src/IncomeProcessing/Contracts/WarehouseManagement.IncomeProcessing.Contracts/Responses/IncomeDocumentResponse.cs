@@ -1,4 +1,4 @@
-namespace WarehouseManagement.IncomeProcessing.Domain.Responses;
+namespace WarehouseManagement.IncomeProcessing.Contracts.Responses;
 
 public record IncomeDocumentResponse(
     Guid Id,

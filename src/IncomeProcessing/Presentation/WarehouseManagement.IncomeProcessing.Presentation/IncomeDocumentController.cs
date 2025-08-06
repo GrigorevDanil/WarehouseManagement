@@ -12,7 +12,7 @@ using WarehouseManagement.IncomeProcessing.Application.UseCases.DeleteIncomeReso
 using WarehouseManagement.IncomeProcessing.Application.UseCases.UpdateIncomeDocument;
 using WarehouseManagement.IncomeProcessing.Application.UseCases.UpdateIncomeResource;
 using WarehouseManagement.IncomeProcessing.Contracts.Requests;
-using WarehouseManagement.IncomeProcessing.Domain.Responses;
+using WarehouseManagement.IncomeProcessing.Contracts.Responses;
 
 namespace WarehouseManagement.IncomeProcessing.Presentation;
 

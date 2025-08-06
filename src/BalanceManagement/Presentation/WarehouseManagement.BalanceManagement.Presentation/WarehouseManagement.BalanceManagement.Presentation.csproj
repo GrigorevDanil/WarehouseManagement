@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\WarehouseManagement.BalanceManagement.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\WarehouseManagement.BalanceManagement.Presentation.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Framework\WarehouseManagement.Framework.csproj" />
+      <ProjectReference Include="..\..\Application\WarehouseManagement.BalanceManagement.Application\WarehouseManagement.BalanceManagement.Application.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.BalanceManagement.Contracts\WarehouseManagement.BalanceManagement.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

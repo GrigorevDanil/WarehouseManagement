@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.7" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Application\WarehouseManagement.BalanceManagement.Application\WarehouseManagement.BalanceManagement.Application.csproj" />
+      <ProjectReference Include="..\..\Domain\WarehouseManagement.BalanceManagement.Domain\WarehouseManagement.BalanceManagement.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

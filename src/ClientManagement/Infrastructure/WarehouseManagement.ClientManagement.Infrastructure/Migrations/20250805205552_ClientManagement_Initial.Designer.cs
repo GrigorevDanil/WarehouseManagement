@@ -13,7 +13,7 @@ using WarehouseManagement.ClientManagement.Infrastructure.DbContexts;
 namespace WarehouseManagement.ClientManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(WriteDbContext))]
-    [Migration("20250802175445_ClientManagement_Initial")]
+    [Migration("20250805205552_ClientManagement_Initial")]
     partial class ClientManagement_Initial
     {
         /// <inheritdoc />

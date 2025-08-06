@@ -13,7 +13,7 @@ using WarehouseManagement.IncomeProcessing.Infrastructure.DbContexts;
 namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
 {
     [DbContext(typeof(WriteDbContext))]
-    [Migration("20250802175459_IncomeProcessing_Initial")]
+    [Migration("20250805205605_IncomeProcessing_Initial")]
     partial class IncomeProcessing_Initial
     {
         /// <inheritdoc />
@@ -58,17 +58,16 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                     b.ToTable("IncomeDocuments", "income-processing");
                 });
 
-            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource", b =>
+            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasDefaultValueSql("gen_random_uuid()");
 
                     b.Property<Guid>("IncomeDocumentId")
                         .HasColumnType("uuid");
 
-                    b.ComplexProperty<Dictionary<string, object>>("ResourceId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.ResourceId#ResourceId", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("ResourceId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.ResourceId#ResourceId", b1 =>
                         {
                             b1.IsRequired();
 
@@ -77,7 +76,7 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                                 .HasColumnName("ResourceId");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("ResourceStock", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.ResourceStock#Stock", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("ResourceStock", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.ResourceStock#Stock", b1 =>
                         {
                             b1.IsRequired();
 
@@ -86,7 +85,7 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                                 .HasColumnName("ResourceStock");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("UnitId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.UnitId#UnitId", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("UnitId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.UnitId#UnitId", b1 =>
                         {
                             b1.IsRequired();
 
@@ -102,7 +101,43 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                     b.ToTable("IncomeResources", "income-processing");
                 });
 
-            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource", b =>
+            modelBuilder.Entity("WarehouseManagement.SharedKernel.OutboxMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Error")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Payload")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime?>("ProcessedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt", "ProcessedAt")
+                        .HasDatabaseName("idx_outbox_messages_unprocessed")
+                        .HasFilter("\"ProcessedAt\" IS NULL");
+
+                    NpgsqlIndexBuilderExtensions.IncludeProperties(b.HasIndex("CreatedAt", "ProcessedAt"), new[] { "Id", "Type", "Payload" });
+
+                    b.ToTable("OutboxMessages", "income-processing");
+                });
+
+            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource", b =>
                 {
                     b.HasOne("WarehouseManagement.IncomeProcessing.Domain.Aggregates.IncomeDocument", null)
                         .WithMany("Resources")

@@ -1,6 +1,6 @@
 ﻿using WarehouseManagement.SharedKernel.ValueObjects;
 
-namespace WarehouseManagement.SharedKernel;
+namespace WarehouseManagement.SharedKernel.Interfaces;
 
 public interface IArchived
 {

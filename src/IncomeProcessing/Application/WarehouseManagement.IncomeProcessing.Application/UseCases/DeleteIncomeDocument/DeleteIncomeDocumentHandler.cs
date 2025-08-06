@@ -4,8 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Messages;
+using WarehouseManagement.Core.Abstractions.Outbox;
 using WarehouseManagement.Core.Enums;
 using WarehouseManagement.Core.Extensions;
+using WarehouseManagement.IncomeProcessing.Contracts.Messaging;
 using WarehouseManagement.IncomeProcessing.Domain.Aggregates;
 using WarehouseManagement.SharedKernel;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
@@ -15,6 +17,8 @@ namespace WarehouseManagement.IncomeProcessing.Application.UseCases.DeleteIncome
 public class DeleteIncomeDocumentHandler : ICommandHandler<Guid, DeleteIncomeDocumentCommand>
 {
     private readonly IRepository<IncomeDocument,IncomeDocumentId> _incomeDocumentRepository;
+    
+    private readonly IOutboxRepository _outboxRepository;
     
     private readonly IUnitOfWork _unitOfWork;
     
@@ -26,12 +30,14 @@ public class DeleteIncomeDocumentHandler : ICommandHandler<Guid, DeleteIncomeDoc
         IRepository<IncomeDocument, IncomeDocumentId> incomeDocumentRepository, 
         [FromKeyedServices(Modules.IncomeProcessing)] IUnitOfWork unitOfWork,
         IValidator<DeleteIncomeDocumentCommand> validator,
-        ILogger<DeleteIncomeDocumentHandler> logger)
+        ILogger<DeleteIncomeDocumentHandler> logger,
+        [FromKeyedServices(Modules.IncomeProcessing)] IOutboxRepository outboxRepository)
     {
         _incomeDocumentRepository = incomeDocumentRepository;
         _unitOfWork = unitOfWork;
         _validator = validator;
         _logger = logger;
+        _outboxRepository = outboxRepository;
     }
 
     public async Task<Result<Guid, ErrorList>> Handle(DeleteIncomeDocumentCommand command, CancellationToken cancellationToken = default)
@@ -51,6 +57,17 @@ public class DeleteIncomeDocumentHandler : ICommandHandler<Guid, DeleteIncomeDoc
         var incomeDocument =  incomeDocumentResult.Value;
         
         _incomeDocumentRepository.Delete(incomeDocument);
+
+        foreach (var incomeResource in incomeDocument.Resources)
+        {
+            var @event = new DeleteIncomeResourceEvent(
+                incomeResource.ResourceId.Value,
+                incomeResource.UnitId.Value,
+                incomeResource.ResourceStock.Value
+            );
+
+            await _outboxRepository.AddAsync(@event, cancellationToken);
+        }
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         

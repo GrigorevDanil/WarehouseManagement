@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\IncomeProcessing\Contracts\WarehouseManagement.IncomeProcessing.Contracts\WarehouseManagement.IncomeProcessing.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\ResourceManagement\Contracts\WarehouseManagement.ResourceManagement.Contracts\WarehouseManagement.ResourceManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\..\..\UnitManagement\Contracts\WarehouseManagement.UnitManagement.Contracts\WarehouseManagement.UnitManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.BalanceManagement.Contracts\WarehouseManagement.BalanceManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\Domain\WarehouseManagement.BalanceManagement.Domain\WarehouseManagement.BalanceManagement.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MassTransit" Version="8.5.1" />
+    </ItemGroup>
+
+</Project>

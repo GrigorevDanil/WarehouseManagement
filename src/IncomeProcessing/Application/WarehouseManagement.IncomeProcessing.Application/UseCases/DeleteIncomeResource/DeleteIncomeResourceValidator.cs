@@ -7,6 +7,7 @@ public class DeleteIncomeResourceValidator : AbstractValidator<DeleteIncomeResou
 {
     public DeleteIncomeResourceValidator()
     {
+        RuleFor(x => x.IncomeDocumentId).MustBeValidGuid();
         RuleFor(x => x.IncomeResourceId).MustBeValidGuid();
     }
 }

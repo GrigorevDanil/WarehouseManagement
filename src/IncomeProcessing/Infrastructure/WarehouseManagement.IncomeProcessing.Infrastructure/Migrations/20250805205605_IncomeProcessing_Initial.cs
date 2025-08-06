@@ -29,6 +29,23 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "OutboxMessages",
+                schema: "income-processing",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Type = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
+                    Payload = table.Column<string>(type: "jsonb", maxLength: 2000, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ProcessedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    Error = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OutboxMessages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "IncomeResources",
                 schema: "income-processing",
                 columns: table => new
@@ -56,6 +73,14 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                 schema: "income-processing",
                 table: "IncomeResources",
                 column: "IncomeDocumentId");
+
+            migrationBuilder.CreateIndex(
+                name: "idx_outbox_messages_unprocessed",
+                schema: "income-processing",
+                table: "OutboxMessages",
+                columns: new[] { "CreatedAt", "ProcessedAt" },
+                filter: "\"ProcessedAt\" IS NULL")
+                .Annotation("Npgsql:IndexInclude", new[] { "Id", "Type", "Payload" });
         }
 
         /// <inheritdoc />
@@ -63,6 +88,10 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "IncomeResources",
+                schema: "income-processing");
+
+            migrationBuilder.DropTable(
+                name: "OutboxMessages",
                 schema: "income-processing");
 
             migrationBuilder.DropTable(

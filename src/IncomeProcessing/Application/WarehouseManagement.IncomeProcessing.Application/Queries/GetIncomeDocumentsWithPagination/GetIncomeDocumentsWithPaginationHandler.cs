@@ -4,7 +4,7 @@ using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.Core.Extensions;
 using WarehouseManagement.Core.Models;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
-using WarehouseManagement.IncomeProcessing.Domain.Responses;
+using WarehouseManagement.IncomeProcessing.Contracts.Responses;
 using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.SharedKernel;
 using WarehouseManagement.UnitManagement.Contracts;
@@ -42,24 +42,18 @@ public class GetIncomeDocumentsWithPaginationHandler : IQueryHandlerWithResult<P
         var endDate = query.EndDate.Kind == DateTimeKind.Unspecified 
             ? DateTime.SpecifyKind(query.EndDate.Date.AddDays(1).AddTicks(-1), DateTimeKind.Utc)
             : query.EndDate.Date.AddDays(1).AddTicks(-1).ToUniversalTime();
-        
-        incomeDocumentQuery = incomeDocumentQuery
-            .Where(doc => 
-                doc.CreatedAt >= startDate && 
-                doc.CreatedAt <= endDate);
             
         incomeDocumentQuery = incomeDocumentQuery 
+            .Where(doc => 
+                doc.CreatedAt >= startDate && 
+                doc.CreatedAt <= endDate)        
             .WhereIf(!string.IsNullOrWhiteSpace(query.NumDocument),
-                res => res.NumDocument.Contains(query.NumDocument!));
-            
-        incomeDocumentQuery = incomeDocumentQuery
+                res => res.NumDocument.Contains(query.NumDocument!))
             .WhereIf(query.ResourceIds != null!,
-                doc => doc.Resources.Any(res => query.ResourceIds!.Contains(res.ResourceId)));
-            
-        incomeDocumentQuery = incomeDocumentQuery
+                doc => doc.Resources.Any(res => query.ResourceIds!.Contains(res.ResourceId)))
             .WhereIf(query.UnitIds != null!,
                 doc => doc.Resources.Any(res => query.UnitIds!.Contains(res.UnitId)));
-            
+        
         incomeDocumentQuery = query.SortDirection?.ToLower() == "desc"
             ? incomeDocumentQuery.OrderByDescending(res => res.NumDocument)
             : incomeDocumentQuery.OrderBy(res => res.NumDocument);
@@ -89,11 +83,11 @@ public class GetIncomeDocumentsWithPaginationHandler : IQueryHandlerWithResult<P
                 incomeResourceResponse.Add(
                     new IncomeResourceResponse(
                         Id: incomeResourceDto.Id,
-                        Resource: new ResourceResponse(
+                        Resource: new IncomeResourceResourceResponse(
                             Id: resourceDto.Id,
                             Title: resourceDto.Title
                             ),
-                        Unit: new UnitResponse(
+                        Unit: new IncomeResourceUnitResponse(
                             Id: unitDto.Id,
                             Title: unitDto.Title
                             ),

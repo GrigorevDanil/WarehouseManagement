@@ -14,7 +14,7 @@ public class IncomeResourceConfiguration : IEntityTypeConfiguration<IncomeResour
         builder.Property(x => x.Id)
             .HasConversion(id => id.Value, idGuid => IncomeResourceId.Of(idGuid))
             .HasDefaultValueSql("gen_random_uuid()")
-            .ValueGeneratedNever();;
+            .ValueGeneratedNever();
         
         builder.ComplexProperty(x => x.ResourceId, 
             p =>

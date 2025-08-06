@@ -1,11 +1,14 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic;
+using Quartz;
 using WarehouseManagement.Core.Abstractions;
+using WarehouseManagement.Core.Abstractions.Outbox;
 using WarehouseManagement.Core.Enums;
+using WarehouseManagement.Framework.Outbox;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
 using WarehouseManagement.IncomeProcessing.Domain.Aggregates;
 using WarehouseManagement.IncomeProcessing.Infrastructure.DbContexts;
+using WarehouseManagement.IncomeProcessing.Infrastructure.Outbox;
 using WarehouseManagement.IncomeProcessing.Infrastructure.Repositories;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 
@@ -19,7 +22,8 @@ public static class Registration
         services
             .AddDbContexts(configuration)
             .AddRepositories()
-            .AddServices();
+            .AddServices()
+            .AddQuartzServices();
         
         return services;
     }
@@ -39,13 +43,35 @@ public static class Registration
     {
         services.AddScoped<IRepository<IncomeDocument, IncomeDocumentId>, IncomeDocumentRepository>();
         
+        services.AddKeyedScoped<IOutboxRepository, OutboxRepository>(Modules.IncomeProcessing);
+        
         return services;
     }
     
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddKeyedScoped<IUnitOfWork, UnitOfWork>(Modules.IncomeProcessing);
-        
+
         return services;
     }
+    
+    private static IServiceCollection AddQuartzServices(this IServiceCollection services)
+    {
+        services.AddScoped<IOutboxMessageProcess, OutboxMessageProcess<WriteDbContext>>();
+
+        services.AddQuartz(configure =>
+        {
+            var jobKey = new JobKey(nameof(OutboxMessageProcessJob));
+
+            configure
+                .AddJob<OutboxMessageProcessJob>(jobKey)
+                .AddTrigger(trigger => trigger.ForJob(jobKey).WithSimpleSchedule(
+                    schedule => schedule.WithIntervalInSeconds(1).RepeatForever()));
+        });
+
+        services.AddQuartzHostedService(options => { options.WaitForJobsToComplete = true; });
+
+        return services;
+    }
+    
 }

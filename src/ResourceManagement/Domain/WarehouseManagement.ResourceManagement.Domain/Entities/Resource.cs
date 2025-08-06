@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using WarehouseManagement.SharedKernel;
+using WarehouseManagement.SharedKernel.Interfaces;
 using WarehouseManagement.SharedKernel.ValueObjects;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 

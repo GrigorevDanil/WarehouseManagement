@@ -17,6 +17,7 @@
 
     <ItemGroup>
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -26,6 +27,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BalanceManagement\Infrastructure\WarehouseManagement.BalanceManagement.Infrastructure\WarehouseManagement.BalanceManagement.Infrastructure.csproj" />
+      <ProjectReference Include="..\BalanceManagement\Presentation\WarehouseManagement.BalanceManagement.Presentation\WarehouseManagement.BalanceManagement.Presentation.csproj" />
       <ProjectReference Include="..\ClientManagement\Infrastructure\WarehouseManagement.ClientManagement.Infrastructure\WarehouseManagement.ClientManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\ClientManagement\Presentation\WarehouseManagement.ClientManagement.Presentation\WarehouseManagement.ClientManagement.Presentation.csproj" />
       <ProjectReference Include="..\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\WarehouseManagement.IncomeProcessing.Application.csproj" />

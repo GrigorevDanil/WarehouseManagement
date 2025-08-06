@@ -4,10 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Messages;
+using WarehouseManagement.Core.Abstractions.Outbox;
 using WarehouseManagement.Core.Enums;
 using WarehouseManagement.Core.Extensions;
-using WarehouseManagement.IncomeProcessing.Application.UseCases.CreateIncomeDocument;
 using WarehouseManagement.IncomeProcessing.Contracts;
+using WarehouseManagement.IncomeProcessing.Contracts.Messaging;
 using WarehouseManagement.IncomeProcessing.Domain.Aggregates;
 using WarehouseManagement.IncomeProcessing.Domain.Entities;
 using WarehouseManagement.ResourceManagement.Contracts;
@@ -28,6 +29,8 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
     
     private readonly IRepository<IncomeDocument,IncomeDocumentId> _incomeDocumentRepository;
     
+    private readonly IOutboxRepository _outboxRepository;
+    
     private readonly IUnitOfWork _unitOfWork;
     
     private readonly IValidator<AddIncomeResourceCommand> _validator;
@@ -38,6 +41,7 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
         IResourceManagementContract resourceManagementContract,
         IUnitManagementContract unitManagementContract, 
         IRepository<IncomeDocument, IncomeDocumentId> incomeDocumentRepository, 
+        [FromKeyedServices(Modules.IncomeProcessing)] IOutboxRepository outboxRepository,
         [FromKeyedServices(Modules.IncomeProcessing)] IUnitOfWork unitOfWork,
         IValidator<AddIncomeResourceCommand> validator, 
         ILogger<AddIncomeResourceHandler> logger, 
@@ -46,6 +50,7 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
         _resourceManagementContract = resourceManagementContract;
         _unitManagementContract = unitManagementContract;
         _incomeDocumentRepository = incomeDocumentRepository;
+        _outboxRepository = outboxRepository;
         _unitOfWork = unitOfWork;
         _validator = validator;
         _logger = logger;
@@ -91,6 +96,14 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
             );
         
         incomeDocument.AddResource(incomeResource);
+
+        var @event = new AddIncomeResourceEvent(
+            incomeResource.ResourceId.Value,
+            incomeResource.UnitId.Value,
+            incomeResource.ResourceStock.Value
+            );
+        
+        await _outboxRepository.AddAsync(@event, cancellationToken);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         

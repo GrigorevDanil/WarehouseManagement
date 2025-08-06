@@ -2,7 +2,7 @@ using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
-using WarehouseManagement.IncomeProcessing.Domain.Responses;
+using WarehouseManagement.IncomeProcessing.Contracts.Responses;
 using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.SharedKernel;
 using WarehouseManagement.UnitManagement.Contracts;
@@ -70,11 +70,11 @@ public class GetIncomeDocumentByIdHandler : IQueryHandlerWithResult<IncomeDocume
         incomeResourceResponse.Add(
             new IncomeResourceResponse(
                 Id: incomeResourceDto.Id,
-                Resource: new ResourceResponse(
+                Resource: new IncomeResourceResourceResponse(
                     Id: resourceDto.Id,
                     Title: resourceDto.Title
                 ),
-                Unit: new UnitResponse(
+                Unit: new IncomeResourceUnitResponse(
                     Id: unitDto.Id,
                     Title: unitDto.Title
                 ),

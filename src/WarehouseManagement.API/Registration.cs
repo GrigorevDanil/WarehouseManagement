@@ -1,5 +1,9 @@
-﻿using FluentValidation;
+﻿using System.Reflection;
+using MassTransit;
+using FluentValidation;
 using Microsoft.OpenApi.Models;
+using WarehouseManagement.BalanceManagement.Infrastructure;
+using WarehouseManagement.BalanceManagement.Presentation;
 using WarehouseManagement.ClientManagement.Infrastructure;
 using WarehouseManagement.ClientManagement.Presentation;
 using WarehouseManagement.Core.Abstractions.Messages;
@@ -16,13 +20,25 @@ public static class Registration
 {
     public static IServiceCollection AddModules(this IServiceCollection services, IConfiguration configuration)
     {
+        var assemblies = new[]
+        {
+            typeof(WarehouseManagement.ResourceManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.ClientManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.UnitManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.IncomeProcessing.Application.Registration).Assembly,
+            typeof(WarehouseManagement.BalanceManagement.Application.Registration).Assembly,
+        };
+        
         services
             .AddSwagger()
             .AddResourceModule(configuration)
             .AddClientModule(configuration)
             .AddUnitModule(configuration)
             .AddIncomeProcessingModule(configuration)
-            .AddApplicationLayers();
+            .AddBalanceModule(configuration)
+            .AddApplicationLayers(assemblies)
+            .AddMessageBus(configuration, assemblies);
+        
 
         return services;
     }
@@ -86,17 +102,18 @@ public static class Registration
 
         return services;
     }
-
-    private static IServiceCollection AddApplicationLayers(this IServiceCollection services)
+    
+    private static IServiceCollection AddBalanceModule(this IServiceCollection services, IConfiguration configuration)
     {
-        var assemblies = new[]
-        {
-            typeof(WarehouseManagement.ResourceManagement.Application.Registration).Assembly,
-            typeof(WarehouseManagement.ClientManagement.Application.Registration).Assembly,
-            typeof(WarehouseManagement.UnitManagement.Application.Registration).Assembly,
-            typeof(WarehouseManagement.IncomeProcessing.Application.Registration).Assembly,
-        };
+        services
+            .AddBalanceManagementPresentation()
+            .AddBalanceManagementInfrastructure(configuration);
 
+        return services;
+    }
+
+    private static IServiceCollection AddApplicationLayers(this IServiceCollection services, Assembly[] assemblies)
+    {
         services.Scan(scan => scan.FromAssemblies(assemblies)
             .AddClasses(classes => classes
                 .AssignableToAny(typeof(ICommandHandler<,>), typeof(ICommandHandler<>)))
@@ -108,9 +125,39 @@ public static class Registration
                 .AssignableToAny(typeof(IQueryHandler<>), typeof(IQueryHandler<,>), typeof(IQueryHandlerWithResult<,>)))
             .AsSelfWithInterfaces()
             .WithScopedLifetime());
-
+        
         services.AddValidatorsFromAssemblies(assemblies);
         
         return services;
     }
+    
+    private static IServiceCollection AddMessageBus(
+        this IServiceCollection services,
+        IConfiguration configuration, 
+        Assembly[] assemblies)
+    {
+        services.AddMassTransit(configure =>
+        {
+            foreach (var assembly in assemblies) 
+                configure.AddConsumers(assembly);
+
+            configure.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host(new Uri(configuration["RabbitMQ:Host"]!), h =>
+                {
+                    h.Username(configuration["RabbitMQ:Username"]!);
+                    h.Password(configuration["RabbitMQ:Password"]!);
+                });
+
+                cfg.Durable = true;
+                
+                cfg.ClearSerialization();
+                cfg.UseRawJsonSerializer();
+                cfg.ConfigureEndpoints(context);
+            });
+        });
+
+        return services;
+    }
 }
+

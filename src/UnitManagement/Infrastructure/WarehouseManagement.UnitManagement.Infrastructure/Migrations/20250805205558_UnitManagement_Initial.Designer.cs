@@ -13,7 +13,7 @@ using WarehouseManagement.UnitManagement.Infrastructure.DbContexts;
 namespace WarehouseManagement.UnitManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(WriteDbContext))]
-    [Migration("20250802175453_UnitManagement_Initial")]
+    [Migration("20250805205558_UnitManagement_Initial")]
     partial class UnitManagement_Initial
     {
         /// <inheritdoc />
