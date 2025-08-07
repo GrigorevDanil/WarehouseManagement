@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Enums;
+using WarehouseManagement.Framework.Hosting;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 using WarehouseManagement.UnitManagement.Application.Interfaces;
 using WarehouseManagement.UnitManagement.Domain.Entities;
@@ -30,6 +32,8 @@ public static class Registrations
         
         services.AddScoped<IUnitReadDbContext, ReadDbContext>(_ =>
             new ReadDbContext(configuration.GetConnectionString(Constants.DATABASE_KEY)!));
+        
+        services.AddTransient<IStartupFilter, DbContextMigrationFilter<WriteDbContext>>();
         
         return services;
     }

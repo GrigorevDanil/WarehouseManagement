@@ -9,17 +9,25 @@ using WarehouseManagement.SharedKernel;
 
 namespace WarehouseManagement.OutcomeProcessing.Infrastructure.DbContexts;
 
-public class WriteDbContext(string connectionString) : DbContext, IOutboxDbContext
+public sealed class WriteDbContext : DbContext, IOutboxDbContext
 {
-    public DbSet<OutcomeDocument> OutcomeDocuments => Set<OutcomeDocument>();
+    private readonly string _connectionString; 
     
+    public DbSet<OutcomeDocument> OutcomeDocuments => Set<OutcomeDocument>();
     public DbSet<OutcomeResource> OutcomeResources => Set<OutcomeResource>();
     
     public DbSet<OutboxMessage> OutboxMessages => Set<OutboxMessage>();
+    
+    public WriteDbContext(string connectionString)
+    {
+        _connectionString = connectionString;
+        
+        Database.Migrate();
+    }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(connectionString);
+        optionsBuilder.UseNpgsql(_connectionString);
         optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseLoggerFactory(CreateLoggerFactory());
     }

@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Outbox;
 using WarehouseManagement.Core.Enums;
+using WarehouseManagement.Framework.Hosting;
 using WarehouseManagement.Framework.Outbox;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
 using WarehouseManagement.IncomeProcessing.Domain.Aggregates;
@@ -35,6 +37,8 @@ public static class Registration
         
         services.AddScoped<IIncomeProcessingReadDbContext, ReadDbContext>(_ =>
             new ReadDbContext(configuration.GetConnectionString(Constants.DATABASE_KEY)!));
+        
+        services.AddTransient<IStartupFilter, DbContextMigrationFilter<WriteDbContext>>();
         
         return services;
     }

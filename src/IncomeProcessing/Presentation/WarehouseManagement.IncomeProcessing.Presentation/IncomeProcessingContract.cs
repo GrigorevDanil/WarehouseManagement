@@ -42,4 +42,26 @@ public class IncomeProcessingContract : IIncomeProcessingContract
         return Errors.General.AlreadyExists(nameof(IncomeResource), nameof(ResourceId), resourceId.ToString());
     }
     
+    public async Task<UnitResult<Error>> CheckResourceIdNotUsedInAnyIncomeResource(ResourceId resourceId)
+    {
+        var isResourceUsed = await _dbContext.IncomeResources
+            .AnyAsync(r => r.ResourceId == resourceId.Value);
+    
+        if (!isResourceUsed)
+            return Result.Success<Error>();
+
+        return Errors.General.AlreadyInUse("Resource", resourceId.Value.ToString());
+    }
+    
+    public async Task<UnitResult<Error>> CheckUnitIdNotUsedInAnyIncomeResource(UnitId unitId)
+    {
+        var isUnitUsed = await _dbContext.IncomeResources
+            .AnyAsync(r => r.UnitId == unitId.Value);
+    
+        if (!isUnitUsed)
+            return Result.Success<Error>();
+
+        return Errors.General.AlreadyInUse("Unit", unitId.Value.ToString());
+    }
+    
 }

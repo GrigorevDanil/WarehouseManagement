@@ -7,6 +7,7 @@ using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.Core.Enums;
 using WarehouseManagement.Core.Extensions;
+using WarehouseManagement.OutcomeProcessing.Contracts;
 using WarehouseManagement.SharedKernel;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 
@@ -14,6 +15,8 @@ namespace WarehouseManagement.ClientManagement.Application.UseCases.DeleteClient
 
 public class DeleteClientHandler : ICommandHandler<Guid, DeleteClientCommand>
 {
+    private readonly IOutcomeProcessingContract _outcomeProcessingContract;
+    
     private readonly IRepository<Client,ClientId> _clientRepository;
     
     private readonly IUnitOfWork _unitOfWork;
@@ -26,12 +29,14 @@ public class DeleteClientHandler : ICommandHandler<Guid, DeleteClientCommand>
         IRepository<Client, ClientId> clientRepository, 
         [FromKeyedServices(Modules.ClientManagement)] IUnitOfWork unitOfWork, 
         IValidator<DeleteClientCommand> validator,
-        ILogger<DeleteClientHandler> logger)
+        ILogger<DeleteClientHandler> logger,
+        IOutcomeProcessingContract outcomeProcessingContract)
     {
         _clientRepository = clientRepository;
         _unitOfWork = unitOfWork;
         _validator = validator;
         _logger = logger;
+        _outcomeProcessingContract = outcomeProcessingContract;
     }
 
     public async Task<Result<Guid, ErrorList>> Handle(DeleteClientCommand command, CancellationToken cancellationToken = default)
@@ -49,6 +54,11 @@ public class DeleteClientHandler : ICommandHandler<Guid, DeleteClientCommand>
             return clientResult.Error.ToErrorList();
         
         var client =  clientResult.Value;
+        
+        var checkClientIdNotUsedInAnyIncomeResourceResult = await _outcomeProcessingContract.CheckClientIdNotUsedInAnyIncomeResource(clientId);
+        
+        if (checkClientIdNotUsedInAnyIncomeResourceResult.IsFailure) 
+            return checkClientIdNotUsedInAnyIncomeResourceResult.Error.ToErrorList();
         
         _clientRepository.Delete(client);
         

@@ -33,6 +33,10 @@ namespace WarehouseManagement.SharedKernel
                 return Error.Conflict("RECORD_ALREADY_EXISTS", $"{name} already exists with {key + withValue}");
             }
 
+            public static Error AlreadyInUse(string name, string id)
+            {
+                return Error.Conflict("RECORD_ALREADY_IN_USE", $"{name} by {id} already in use");
+            }
         }
         
         public static class OutcomeDocument
@@ -47,6 +51,10 @@ namespace WarehouseManagement.SharedKernel
                 return Error.Conflict("OUTCOME_DOCUMENT_NOT_SIGNED", $"Outcome document has not been signed yet");
             }
 
+            public static Error CannotRemoveLastResource()
+            {
+                return Error.Conflict("CANNOT_REMOVE_LAST_RESOURCE", "Cannot remove the last resource from the document.");
+            }
         }
         
         public static class Balance

@@ -7,6 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\IncomeProcessing\Contracts\WarehouseManagement.IncomeProcessing.Contracts\WarehouseManagement.IncomeProcessing.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\OutcomeProcessing\Contracts\WarehouseManagement.OutcomeProcessing.Contracts\WarehouseManagement.OutcomeProcessing.Contracts.csproj" />
       <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
       <ProjectReference Include="..\..\Contracts\WarehouseManagement.UnitManagement.Contracts\WarehouseManagement.UnitManagement.Contracts.csproj" />
       <ProjectReference Include="..\..\Domain\WarehouseManagement.UnitManagement.Domain\WarehouseManagement.UnitManagement.Domain.csproj" />

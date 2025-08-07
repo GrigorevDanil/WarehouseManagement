@@ -7,12 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.3.0" />
       <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.7" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Framework\WarehouseManagement.Framework.csproj" />
       <ProjectReference Include="..\..\Application\WarehouseManagement.UnitManagement.Application\WarehouseManagement.UnitManagement.Application.csproj" />
       <ProjectReference Include="..\..\Contracts\WarehouseManagement.UnitManagement.Contracts\WarehouseManagement.UnitManagement.Contracts.csproj" />
       <ProjectReference Include="..\..\Domain\WarehouseManagement.UnitManagement.Domain\WarehouseManagement.UnitManagement.Domain.csproj" />

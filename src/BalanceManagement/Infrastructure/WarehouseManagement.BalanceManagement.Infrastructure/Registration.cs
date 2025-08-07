@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic;
@@ -7,6 +8,7 @@ using WarehouseManagement.BalanceManagement.Infrastructure.DbContexts;
 using WarehouseManagement.BalanceManagement.Infrastructure.Repositories;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Enums;
+using WarehouseManagement.Framework.Hosting;
 using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 
 namespace WarehouseManagement.BalanceManagement.Infrastructure;
@@ -31,6 +33,8 @@ public static class Registration
         
         services.AddScoped<IBalanceReadDbContext, ReadDbContext>(_ =>
             new ReadDbContext(configuration.GetConnectionString(Constants.DATABASE_KEY)!));
+        
+        services.AddTransient<IStartupFilter, DbContextMigrationFilter<WriteDbContext>>();
         
         return services;
     }

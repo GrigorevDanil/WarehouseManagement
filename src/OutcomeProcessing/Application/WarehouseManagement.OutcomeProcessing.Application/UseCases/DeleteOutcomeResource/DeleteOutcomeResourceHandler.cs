@@ -49,6 +49,9 @@ public class DeleteOutcomeResourceHandler : ICommandHandler<Guid,  DeleteOutcome
             return outcomeDocumentResult.Error.ToErrorList();
         
         var outcomeDocument = outcomeDocumentResult.Value;
+
+        if (outcomeDocument.Resources.Count == 1) 
+            return Errors.OutcomeDocument.CannotRemoveLastResource().ToErrorList();
         
         var outcomeResourceResult = outcomeDocument.GetOutcomeResourceById(command.OutcomeResourceId);
         
