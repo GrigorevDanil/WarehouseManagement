@@ -72,11 +72,11 @@ public class ReduceResourceStockBalanceHandler : ICommandHandler<Guid, ReduceRes
         
         var balance =  balanceResult.Value;
 
-        if (balance.ResourceStock.Value == command.SubtractedResourceStock) 
+        if (balance.ResourceStock.Value == command.SubtractedResourceQuantity) 
             _balanceRepository.Delete(balance);
         else 
             balance.ReduceResourceStock(
-                command.SubtractedResourceStock);
+                command.SubtractedResourceQuantity);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         

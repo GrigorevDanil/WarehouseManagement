@@ -68,7 +68,7 @@ public class DeleteIncomeResourceHandler : ICommandHandler<Guid, DeleteIncomeRes
         var @event = new DeleteIncomeResourceEvent(
             incomeResource.ResourceId.Value,
             incomeResource.UnitId.Value,
-            incomeResource.ResourceStock.Value
+            incomeResource.ResourceQuantity.Value
         );
 
         await _outboxRepository.AddAsync(@event, cancellationToken);

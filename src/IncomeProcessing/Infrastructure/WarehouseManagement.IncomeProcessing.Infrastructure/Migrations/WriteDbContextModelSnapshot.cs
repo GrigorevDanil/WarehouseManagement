@@ -55,7 +55,7 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                     b.ToTable("IncomeDocuments", "income-processing");
                 });
 
-            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource", b =>
+            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid")
@@ -64,7 +64,7 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                     b.Property<Guid>("IncomeDocumentId")
                         .HasColumnType("uuid");
 
-                    b.ComplexProperty<Dictionary<string, object>>("ResourceId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.ResourceId#ResourceId", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("ResourceId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.ResourceId#ResourceId", b1 =>
                         {
                             b1.IsRequired();
 
@@ -73,16 +73,16 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                                 .HasColumnName("ResourceId");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("ResourceStock", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.ResourceStock#Stock", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("ResourceQuantity", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.ResourceQuantity#Quantity", b1 =>
                         {
                             b1.IsRequired();
 
                             b1.Property<int>("Value")
                                 .HasColumnType("integer")
-                                .HasColumnName("ResourceStock");
+                                .HasColumnName("ResourceQuantity");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("UnitId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource.UnitId#UnitId", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("UnitId", "WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.UnitId#UnitId", b1 =>
                         {
                             b1.IsRequired();
 
@@ -134,7 +134,7 @@ namespace WarehouseManagement.IncomeProcessing.Infrastructure.Migrations
                     b.ToTable("OutboxMessages", "income-processing");
                 });
 
-            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource.IncomeResource", b =>
+            modelBuilder.Entity("WarehouseManagement.IncomeProcessing.Domain.Entities.IncomeResource", b =>
                 {
                     b.HasOne("WarehouseManagement.IncomeProcessing.Domain.Aggregates.IncomeDocument", null)
                         .WithMany("Resources")

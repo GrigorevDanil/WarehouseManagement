@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WarehouseManagement.Core.Models;
 using WarehouseManagement.Framework;
 using WarehouseManagement.Framework.Extensions;
-using WarehouseManagement.ResourceManagement.Application.Queries.GetResourcesById;
+using WarehouseManagement.ResourceManagement.Application.Queries.GetResourceById;
 using WarehouseManagement.ResourceManagement.Application.Queries.GetResourcesWithPagination;
 using WarehouseManagement.ResourceManagement.Application.UseCases.CreateResource;
 using WarehouseManagement.ResourceManagement.Application.UseCases.DeleteResource;
@@ -42,11 +42,11 @@ public class ResourceController : ApplicationController
     [ProducesResponseType(typeof(Envelope<ResourceDto>), StatusCodes.Status200OK), ]
     public async Task<ActionResult<ResourceDto>> GetResourceById(
         [FromRoute] Guid id,
-        [FromServices] GetResourcesByIdHandler handler,
+        [FromServices] GetResourceByIdHandler handler,
         CancellationToken cancellationToken = default
     )
     {
-        var query = GetResourcesByIdQuery.Create(id);
+        var query = GetResourceByIdQuery.Create(id);
         var result = await handler.Handle(query, cancellationToken);
         return result.ToResponse();
     }

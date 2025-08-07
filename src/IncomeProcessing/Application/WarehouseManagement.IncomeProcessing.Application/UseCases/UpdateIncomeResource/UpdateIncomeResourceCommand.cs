@@ -8,8 +8,8 @@ public record UpdateIncomeResourceCommand(
     Guid IncomeResourceId,
     Guid ResourceId,
     Guid UnitId,
-    int ResourceStock) : ICommand
+    int ResourceQuantity) : ICommand
 {
     public static UpdateIncomeResourceCommand Create(Guid incomeDocumentId, Guid incomeResourceId, UpdateIncomeResourceRequest request) => 
-        new(incomeDocumentId, incomeResourceId,request.ResourceId,  request.UnitId, request.ResourceStock);
+        new(incomeDocumentId, incomeResourceId,request.ResourceId,  request.UnitId, request.ResourceQuantity);
 }

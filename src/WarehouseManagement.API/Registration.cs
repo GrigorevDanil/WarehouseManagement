@@ -9,6 +9,8 @@ using WarehouseManagement.ClientManagement.Presentation;
 using WarehouseManagement.Core.Abstractions.Messages;
 using WarehouseManagement.IncomeProcessing.Infrastructure;
 using WarehouseManagement.IncomeProcessing.Presentation;
+using WarehouseManagement.OutcomeProcessing.Infrastructure;
+using WarehouseManagement.OutcomeProcessing.Presentation;
 using WarehouseManagement.ResourceManagement.Infrastructure;
 using WarehouseManagement.ResourceManagement.Presentation;
 using WarehouseManagement.UnitManagement.Infrastructure;
@@ -27,6 +29,7 @@ public static class Registration
             typeof(WarehouseManagement.UnitManagement.Application.Registration).Assembly,
             typeof(WarehouseManagement.IncomeProcessing.Application.Registration).Assembly,
             typeof(WarehouseManagement.BalanceManagement.Application.Registration).Assembly,
+            typeof(WarehouseManagement.OutcomeProcessing.Application.Registration).Assembly,
         };
         
         services
@@ -36,6 +39,7 @@ public static class Registration
             .AddUnitModule(configuration)
             .AddIncomeProcessingModule(configuration)
             .AddBalanceModule(configuration)
+            .AddOutcomeProcessingModule(configuration)
             .AddApplicationLayers(assemblies)
             .AddMessageBus(configuration, assemblies);
         
@@ -108,6 +112,15 @@ public static class Registration
         services
             .AddBalanceManagementPresentation()
             .AddBalanceManagementInfrastructure(configuration);
+
+        return services;
+    }
+    
+    private static IServiceCollection AddOutcomeProcessingModule(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddOutcomeProcessingPresentation()
+            .AddOutcomeProcessingInfrastructure(configuration);
 
         return services;
     }

@@ -33,11 +33,11 @@ public class IncomeResourceConfiguration : IEntityTypeConfiguration<IncomeResour
 
             });
         
-        builder.ComplexProperty(x => x.ResourceStock, 
+        builder.ComplexProperty(x => x.ResourceQuantity, 
             p =>
             {
                 p.Property(x => x.Value)
-                    .HasColumnName(nameof(IncomeResource.ResourceStock))
+                    .HasColumnName(nameof(IncomeResource.ResourceQuantity))
                     .IsRequired();
             });
     }

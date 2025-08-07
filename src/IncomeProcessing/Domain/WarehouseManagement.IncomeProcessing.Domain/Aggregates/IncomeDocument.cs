@@ -6,13 +6,13 @@ using WarehouseManagement.SharedKernel.ValueObjects.Ids;
 
 namespace WarehouseManagement.IncomeProcessing.Domain.Aggregates;
 
-/// <summary> Корень-агрегат, документ поступления </summary>
+/// <summary> Сущность-агрегат, документ поступления </summary>
 public class IncomeDocument : Entity<IncomeDocumentId>
 {
     /// <summary> Конструктор для поддержки EF. Не использовать! </summary>
     private IncomeDocument(IncomeDocumentId id) : base(id) { }
     
-    /// <summary> Конструктор клиента </summary>
+    /// <summary> Конструктор документа поступления </summary>
     public IncomeDocument(
         NumDocument numDocument, CreatedAt createdAt): base(IncomeDocumentId.Create())
     {
@@ -26,10 +26,10 @@ public class IncomeDocument : Entity<IncomeDocumentId>
     /// <summary> Дата создания документа </summary>
     public CreatedAt CreatedAt { get; private set; }
     
-    /// <summary> Поступающие ресурсы для взаимодействия внутри корня-агрегата</summary>
+    /// <summary> Ресурсы поступления для взаимодействия внутри сущности-агрегата</summary>
     private readonly List<IncomeResource> _resources = [];
     
-    /// <summary> Поступающие ресурсы </summary>
+    /// <summary> Ресурсы поступления </summary>
     public IReadOnlyList<IncomeResource> Resources => _resources;
 
     /// <summary>

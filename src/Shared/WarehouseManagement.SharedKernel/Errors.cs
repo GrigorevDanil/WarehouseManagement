@@ -35,6 +35,29 @@ namespace WarehouseManagement.SharedKernel
 
         }
         
+        public static class OutcomeDocument
+        {
+            public static Error DocumentAlreadySigned()
+            {
+                return Error.Conflict("OUTCOME_DOCUMENT_ALREADY_SIGNED", $"Outcome document already signed");
+            }
+            
+            public static Error DocumentNotSigned()
+            {
+                return Error.Conflict("OUTCOME_DOCUMENT_NOT_SIGNED", $"Outcome document has not been signed yet");
+            }
+
+        }
+        
+        public static class Balance
+        {
+            public static Error InsufficientStock()
+            {
+                return Error.Conflict("INSUFFICIENT_STOCK", $"Requested amount is not in the balance");
+            }
+
+        }
+        
         public static class Archive
         {
             public static Error ArchiveRecord(string name, Guid id)

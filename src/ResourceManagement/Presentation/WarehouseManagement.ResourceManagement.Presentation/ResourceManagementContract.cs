@@ -1,7 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 using WarehouseManagement.ResourceManagement.Application.Interfaces;
-using WarehouseManagement.ResourceManagement.Application.Queries.GetResourcesById;
+using WarehouseManagement.ResourceManagement.Application.Queries.GetResourceById;
 using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.ResourceManagement.Contracts.Dtos;
 using WarehouseManagement.ResourceManagement.Domain.Entities;
@@ -14,14 +14,14 @@ public class ResourceManagementContract : IResourceManagementContract
 {
     private readonly IResourceReadDbContext _dbContext;
 
-    private readonly GetResourcesByIdHandler _getResourcesByIdHandler;
+    private readonly GetResourceByIdHandler _getResourceByIdHandler;
 
     public ResourceManagementContract(
         IResourceReadDbContext dbContext, 
-        GetResourcesByIdHandler getResourcesByIdHandler)
+        GetResourceByIdHandler getResourceByIdHandler)
     {
         _dbContext = dbContext;
-        _getResourcesByIdHandler = getResourcesByIdHandler;
+        _getResourceByIdHandler = getResourceByIdHandler;
     }
 
     public async Task<UnitResult<Error>> CheckResourceTitleNotExists(string title)
@@ -47,10 +47,20 @@ public class ResourceManagementContract : IResourceManagementContract
         return Result.Success<Error>();
     }
 
+    public async Task<UnitResult<Error>> CheckResourceExistsById(Guid resourceId)
+    {
+        var foundedResource = await _dbContext.Resources
+            .FirstOrDefaultAsync(s => s.Id == resourceId);
+
+        if (foundedResource is null) return Errors.General.NotFound(resourceId);
+        
+        return Result.Success<Error>();
+    }
+
     public async Task<Result<ResourceDto, ErrorList>> GetResourceById(Guid resourceId, CancellationToken cancellationToken = default)
     {
-        var query = new GetResourcesByIdQuery(resourceId);
+        var query = new GetResourceByIdQuery(resourceId);
         
-        return await _getResourcesByIdHandler.Handle(query, cancellationToken);
+        return await _getResourceByIdHandler.Handle(query, cancellationToken);
     }
 }

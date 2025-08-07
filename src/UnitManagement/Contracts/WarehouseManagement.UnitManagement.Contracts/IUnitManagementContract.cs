@@ -8,6 +8,7 @@ public interface IUnitManagementContract
 {
     Task<UnitResult<Error>> CheckUnitTitleNotExists(string title);
     Task<UnitResult<Error>> CheckUnitExistsAndNotArchivedById(Guid unitId);
+    Task<UnitResult<Error>> CheckUnitExistsById(Guid unitId);
     Task<Result<UnitDto, ErrorList>> GetUnitById(
         Guid unitId, CancellationToken cancellationToken = default);
 }

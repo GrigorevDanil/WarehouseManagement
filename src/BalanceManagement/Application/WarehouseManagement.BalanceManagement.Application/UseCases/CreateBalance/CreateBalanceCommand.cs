@@ -3,8 +3,8 @@ using WarehouseManagement.Core.Abstractions.Messages;
 
 namespace WarehouseManagement.BalanceManagement.Application.UseCases.CreateBalance;
 
-public record CreateBalanceCommand(Guid ResourceId, Guid UnitId, int ResourceStock) : ICommand
+public record CreateBalanceCommand(Guid ResourceId, Guid UnitId, int ResourceQuantity) : ICommand
 {
     public static CreateBalanceCommand Create(CreateBalanceRequest request) => 
-        new(request.ResourceId, request.UnitId, request.ResourceStock);
+        new(request.ResourceId, request.UnitId, request.ResourceQuantity);
 }

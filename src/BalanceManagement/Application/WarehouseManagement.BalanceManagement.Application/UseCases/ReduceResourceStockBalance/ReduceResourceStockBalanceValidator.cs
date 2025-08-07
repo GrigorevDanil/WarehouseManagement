@@ -10,6 +10,6 @@ public class ReduceResourceStockBalanceValidator : AbstractValidator<ReduceResou
     {
         RuleFor(x => x.ResourceId).MustBeValidGuid();
         RuleFor(x => x.UnitId).MustBeValidGuid();
-        RuleFor(x => x.SubtractedResourceStock).MustBeValueObject(Stock.Of);
+        RuleFor(x => x.SubtractedResourceQuantity).MustBeValueObject(Stock.Of);
     }
 }

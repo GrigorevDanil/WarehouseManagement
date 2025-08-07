@@ -8,6 +8,7 @@ public interface IResourceManagementContract
 {
     Task<UnitResult<Error>> CheckResourceTitleNotExists(string title);
     Task<UnitResult<Error>> CheckResourceExistsAndNotArchivedById(Guid resourceId);
+    Task<UnitResult<Error>> CheckResourceExistsById(Guid resourceId);
     
     Task<Result<ResourceDto, ErrorList>> GetResourceById(
         Guid resourceId, CancellationToken cancellationToken = default);

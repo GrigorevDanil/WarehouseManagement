@@ -2,12 +2,13 @@ using CSharpFunctionalExtensions;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.BalanceManagement.Contracts;
 using WarehouseManagement.Core.Abstractions;
 using WarehouseManagement.Core.Abstractions.Messages;
+using WarehouseManagement.Core.Abstractions.Outbox;
 using WarehouseManagement.Core.Enums;
 using WarehouseManagement.Core.Extensions;
-using WarehouseManagement.IncomeProcessing.Application.UseCases.UpdateIncomeDocument;
-using WarehouseManagement.IncomeProcessing.Contracts;
+using WarehouseManagement.IncomeProcessing.Contracts.Messaging;
 using WarehouseManagement.IncomeProcessing.Domain.Aggregates;
 using WarehouseManagement.ResourceManagement.Contracts;
 using WarehouseManagement.SharedKernel;
@@ -19,11 +20,15 @@ namespace WarehouseManagement.IncomeProcessing.Application.UseCases.UpdateIncome
 
 public class UpdateIncomeResourceHandler : ICommandHandler<Guid, UpdateIncomeResourceCommand>
 {
+    private readonly IBalanceManagementContract _balanceManagementContract;
+    
     private readonly IResourceManagementContract _resourceManagementContract;
     
     private readonly IUnitManagementContract _unitManagementContract;
     
     private readonly IRepository<IncomeDocument,IncomeDocumentId> _incomeDocumentRepository;
+    
+    private readonly IOutboxRepository _outboxRepository;
     
     private readonly IUnitOfWork _unitOfWork;
     
@@ -38,7 +43,9 @@ public class UpdateIncomeResourceHandler : ICommandHandler<Guid, UpdateIncomeRes
         IRepository<IncomeDocument, IncomeDocumentId> incomeDocumentRepository, 
         [FromKeyedServices(Modules.IncomeProcessing)]  IUnitOfWork unitOfWork, 
         IValidator<UpdateIncomeResourceCommand> validator, 
-        ILogger<UpdateIncomeResourceHandler> logger)
+        ILogger<UpdateIncomeResourceHandler> logger, 
+        [FromKeyedServices(Modules.IncomeProcessing)] IOutboxRepository outboxRepository,
+        IBalanceManagementContract balanceManagementContract)
     {
         _resourceManagementContract = resourceManagementContract;
         _unitManagementContract = unitManagementContract;
@@ -46,6 +53,8 @@ public class UpdateIncomeResourceHandler : ICommandHandler<Guid, UpdateIncomeRes
         _unitOfWork = unitOfWork;
         _validator = validator;
         _logger = logger;
+        _outboxRepository = outboxRepository;
+        _balanceManagementContract = balanceManagementContract;
     }
 
     public async Task<Result<Guid, ErrorList>> Handle(UpdateIncomeResourceCommand command, CancellationToken cancellationToken = default)
@@ -87,10 +96,32 @@ public class UpdateIncomeResourceHandler : ICommandHandler<Guid, UpdateIncomeRes
                 return checkUnitExistsAndNotArchivedByIdResult.Error.ToErrorList();
         }
         
+        var balanceResult = await _balanceManagementContract.GetBalanceByResourceIdAndUnitId(command.ResourceId, command.UnitId);
+        
+        if (balanceResult.IsFailure)
+            return balanceResult.Error.ToErrorList();
+        
+        var balance = balanceResult.Value;
+        
+        var quantity = command.ResourceQuantity - incomeResource.ResourceQuantity.Value;
+        
+        var balanceResourceStock = balance.ResourceStock + quantity;
+        
+        if (balanceResourceStock < 0) 
+            return Errors.Balance.InsufficientStock().ToErrorList();
+        
+        var @event = new UpdateIncomeResourceEvent(
+            command.ResourceId,
+            command.UnitId,
+            quantity
+        );
+        
+        await _outboxRepository.AddAsync(@event, cancellationToken);
+        
         incomeResource.UpdateMainInfo(
             ResourceId.Of(command.ResourceId), 
             UnitId.Of(command.UnitId), 
-            Stock.Of(command.ResourceStock).Value
+            Quantity.Of(command.ResourceQuantity).Value
             );
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);

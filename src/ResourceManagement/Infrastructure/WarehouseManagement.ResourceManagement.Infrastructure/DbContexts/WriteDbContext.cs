@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.ResourceManagement.Domain.Entities;
 
 namespace WarehouseManagement.ResourceManagement.Infrastructure.DbContexts;
@@ -22,7 +23,7 @@ public class WriteDbContext(string connectionString) : DbContext
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Write") ?? false);
         
-        modelBuilder.HasDefaultSchema("resource-management");
+        modelBuilder.HasDefaultSchema(Schemas.ResourceManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

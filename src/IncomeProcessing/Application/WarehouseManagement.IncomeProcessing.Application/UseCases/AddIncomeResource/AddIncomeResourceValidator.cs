@@ -11,6 +11,6 @@ public class AddIncomeResourceValidator : AbstractValidator<AddIncomeResourceCom
         RuleFor(x => x.IncomeDocumentId).MustBeValidGuid();
         RuleFor(x => x.ResourceId).MustBeValidGuid();
         RuleFor(x => x.UnitId).MustBeValidGuid();
-        RuleFor(x => x.ResourceStock).MustBeValueObject(Stock.Of);
+        RuleFor(x => x.ResourceQuantity).MustBeValueObject(Quantity.Of);
     }
 }

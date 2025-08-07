@@ -160,6 +160,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.Balance
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.BalanceManagement.Presentation", "src\BalanceManagement\Presentation\WarehouseManagement.BalanceManagement.Presentation\WarehouseManagement.BalanceManagement.Presentation.csproj", "{C738C622-F8B5-4065-85A1-808D63F030D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OutcomeProcessing", "OutcomeProcessing", "{DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{63FF7FD4-5472-4CFE-98CF-C9DF98F18C25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{72CFB0AD-CF48-4EAF-92FC-974E386E88D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6D882AC2-7F89-42F8-8CE7-D745F1637CED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AAFEB707-36ED-4E7A-89CA-4B2EC07111FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{01F9C7F4-18D2-492E-A134-C3B290A7C204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.OutcomeProcessing.Application", "src\OutcomeProcessing\Application\WarehouseManagement.OutcomeProcessing.Application\WarehouseManagement.OutcomeProcessing.Application.csproj", "{5E2E8012-337A-4903-9E76-0F37301B0CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.OutcomeProcessing.Contracts", "src\OutcomeProcessing\Contracts\WarehouseManagement.OutcomeProcessing.Contracts\WarehouseManagement.OutcomeProcessing.Contracts.csproj", "{4785AB29-42F0-4D2D-B5B1-238FD68410B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.OutcomeProcessing.Domain", "src\OutcomeProcessing\Domain\WarehouseManagement.OutcomeProcessing.Domain\WarehouseManagement.OutcomeProcessing.Domain.csproj", "{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.OutcomeProcessing.Infrastructure", "src\OutcomeProcessing\Infrastructure\WarehouseManagement.OutcomeProcessing.Infrastructure\WarehouseManagement.OutcomeProcessing.Infrastructure.csproj", "{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagement.OutcomeProcessing.Presentation", "src\OutcomeProcessing\Presentation\WarehouseManagement.OutcomeProcessing.Presentation\WarehouseManagement.OutcomeProcessing.Presentation.csproj", "{1ECA61F1-2F42-4569-B719-637C79B993CB}"
+EndProject
 
 
 Global
@@ -284,6 +306,26 @@ Global
 		{C738C622-F8B5-4065-85A1-808D63F030D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C738C622-F8B5-4065-85A1-808D63F030D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C738C622-F8B5-4065-85A1-808D63F030D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E2E8012-337A-4903-9E76-0F37301B0CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E2E8012-337A-4903-9E76-0F37301B0CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E2E8012-337A-4903-9E76-0F37301B0CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E2E8012-337A-4903-9E76-0F37301B0CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4785AB29-42F0-4D2D-B5B1-238FD68410B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4785AB29-42F0-4D2D-B5B1-238FD68410B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4785AB29-42F0-4D2D-B5B1-238FD68410B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4785AB29-42F0-4D2D-B5B1-238FD68410B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ECA61F1-2F42-4569-B719-637C79B993CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ECA61F1-2F42-4569-B719-637C79B993CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ECA61F1-2F42-4569-B719-637C79B993CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ECA61F1-2F42-4569-B719-637C79B993CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{262E932F-8434-4F5C-9BA2-15A57B072621} = {987E2B27-5EB3-43D5-9416-88CD2E3B8DF6}
@@ -346,5 +388,16 @@ Global
 		{137B37D8-9865-4F20-A505-FE4B8B9F0138} = {B8230FC2-5F55-4AFF-9696-7EB5CA4372D2}
 		{5039F313-18E7-4D08-ABAB-35342E25B0D1} = {046E54C7-0135-4E86-BF52-BA17FEE5F911}
 		{C738C622-F8B5-4065-85A1-808D63F030D2} = {5678658E-B075-4860-A057-FA726172D038}
+		{DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B} = {987E2B27-5EB3-43D5-9416-88CD2E3B8DF6}
+		{63FF7FD4-5472-4CFE-98CF-C9DF98F18C25} = {DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}
+		{72CFB0AD-CF48-4EAF-92FC-974E386E88D0} = {DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}
+		{6D882AC2-7F89-42F8-8CE7-D745F1637CED} = {DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}
+		{AAFEB707-36ED-4E7A-89CA-4B2EC07111FB} = {DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}
+		{01F9C7F4-18D2-492E-A134-C3B290A7C204} = {DCF9CB4B-A875-4F8C-A092-CF1BBC0B193B}
+		{5E2E8012-337A-4903-9E76-0F37301B0CCE} = {63FF7FD4-5472-4CFE-98CF-C9DF98F18C25}
+		{4785AB29-42F0-4D2D-B5B1-238FD68410B8} = {72CFB0AD-CF48-4EAF-92FC-974E386E88D0}
+		{1FF8C4BA-0733-4F91-B3D6-9EEDE0F460C9} = {6D882AC2-7F89-42F8-8CE7-D745F1637CED}
+		{007E1735-7D5F-42D3-8E4D-E0218E6AB7CC} = {AAFEB707-36ED-4E7A-89CA-4B2EC07111FB}
+		{1ECA61F1-2F42-4569-B719-637C79B993CB} = {01F9C7F4-18D2-492E-A134-C3B290A7C204}
 	EndGlobalSection
 EndGlobal

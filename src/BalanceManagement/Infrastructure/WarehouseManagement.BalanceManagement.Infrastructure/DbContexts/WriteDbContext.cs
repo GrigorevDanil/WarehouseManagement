@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.BalanceManagement.Domain.Entities;
+using WarehouseManagement.Core.Constants;
 
 namespace WarehouseManagement.BalanceManagement.Infrastructure.DbContexts;
 
@@ -21,7 +22,7 @@ public class WriteDbContext(string connectionString) : DbContext
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Write") ?? false);
         
-        modelBuilder.HasDefaultSchema("balance-management");
+        modelBuilder.HasDefaultSchema(Schemas.BalanceManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

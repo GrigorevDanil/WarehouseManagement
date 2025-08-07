@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.UnitManagement.Application.Interfaces;
 using WarehouseManagement.UnitManagement.Contracts.Dtos;
 
@@ -24,7 +25,7 @@ public class ReadDbContext(string connectionString) : DbContext, IUnitReadDbCont
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
         
-        modelBuilder.HasDefaultSchema("unit-management");
+        modelBuilder.HasDefaultSchema(Schemas.UnitManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

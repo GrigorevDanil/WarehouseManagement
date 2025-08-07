@@ -47,6 +47,17 @@ public class UnitManagementContract : IUnitManagementContract
         return Result.Success<Error>();
     }
 
+    public async Task<UnitResult<Error>> CheckUnitExistsById(Guid unitId)
+    {
+        var foundedUnit = await _dbContext.Units
+            .FirstOrDefaultAsync(s => s.Id == unitId);
+
+        if (foundedUnit is null) return Errors.General.NotFound(unitId);
+        
+        
+        return Result.Success<Error>();
+    }
+
     public async Task<Result<UnitDto, ErrorList>> GetUnitById(Guid unitId, CancellationToken cancellationToken = default)
     {
         var query = GetUnitByIdQuery.Create(unitId);

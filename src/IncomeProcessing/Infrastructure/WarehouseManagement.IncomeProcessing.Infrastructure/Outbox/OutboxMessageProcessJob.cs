@@ -1,5 +1,7 @@
-﻿using Quartz;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Quartz;
 using WarehouseManagement.Core.Abstractions.Outbox;
+using WarehouseManagement.Core.Enums;
 using WarehouseManagement.IncomeProcessing.Contracts;
 
 namespace WarehouseManagement.IncomeProcessing.Infrastructure.Outbox;
@@ -9,7 +11,7 @@ public class OutboxMessageProcessJob : IJob
 {
     private readonly IOutboxMessageProcess _outboxMessageProcess;
 
-    public OutboxMessageProcessJob(IOutboxMessageProcess outboxMessageProcess)
+    public OutboxMessageProcessJob([FromKeyedServices(Modules.IncomeProcessing)]IOutboxMessageProcess outboxMessageProcess)
     {
         _outboxMessageProcess = outboxMessageProcess;
     }

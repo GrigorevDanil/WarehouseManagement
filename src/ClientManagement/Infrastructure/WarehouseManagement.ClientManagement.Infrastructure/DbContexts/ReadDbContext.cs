@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.ClientManagement.Application.Interfaces;
 using WarehouseManagement.ClientManagement.Contracts.Dtos;
+using WarehouseManagement.Core.Constants;
 
 namespace WarehouseManagement.ClientManagement.Infrastructure.DbContexts;
 
@@ -24,7 +25,7 @@ public class ReadDbContext(string connectionString) : DbContext, IClientReadDbCo
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
         
-        modelBuilder.HasDefaultSchema("client-management");
+        modelBuilder.HasDefaultSchema(Schemas.ClientManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

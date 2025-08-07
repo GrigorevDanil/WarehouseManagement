@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\BalanceManagement\Contracts\WarehouseManagement.BalanceManagement.Contracts\WarehouseManagement.BalanceManagement.Contracts.csproj" />
       <ProjectReference Include="..\..\..\ResourceManagement\Contracts\WarehouseManagement.ResourceManagement.Contracts\WarehouseManagement.ResourceManagement.Contracts.csproj" />
       <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
       <ProjectReference Include="..\..\..\UnitManagement\Contracts\WarehouseManagement.UnitManagement.Contracts\WarehouseManagement.UnitManagement.Contracts.csproj" />

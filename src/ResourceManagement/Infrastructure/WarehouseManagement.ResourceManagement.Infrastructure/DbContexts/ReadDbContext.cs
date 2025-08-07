@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.ResourceManagement.Application.Interfaces;
 using WarehouseManagement.ResourceManagement.Contracts.Dtos;
 
@@ -25,7 +26,7 @@ public class ReadDbContext(string connectionString) : DbContext, IResourceReadDb
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
         
-        modelBuilder.HasDefaultSchema("resource-management");
+        modelBuilder.HasDefaultSchema(Schemas.ResourceManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

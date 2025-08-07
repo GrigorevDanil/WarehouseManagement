@@ -10,5 +10,5 @@ public class IncomeResourceDto
     
     public Guid UnitId { get; init; }
     
-    public int ResourceStock { get; init; }
+    public int ResourceQuantity { get; init; }
 }

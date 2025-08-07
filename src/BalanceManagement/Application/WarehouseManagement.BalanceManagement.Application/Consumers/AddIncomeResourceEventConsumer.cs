@@ -36,7 +36,7 @@ public class AddIncomeResourceEventConsumer : IConsumer<AddIncomeResourceEvent>
             var command = new CreateBalanceCommand(
                 context.Message.ResourceId,
                 context.Message.UnitId,
-                context.Message.AddedResourceStock);
+                context.Message.AddedResourceQuantity);
 
             await _createBalanceHandler.Handle(command);
         }
@@ -45,7 +45,7 @@ public class AddIncomeResourceEventConsumer : IConsumer<AddIncomeResourceEvent>
             var command = new ReplenishResourceStockBalanceCommand(
                 context.Message.ResourceId,
                 context.Message.UnitId,
-                context.Message.AddedResourceStock);
+                context.Message.AddedResourceQuantity);
             
             await _replenishResourceStockBalanceHandler.Handle(command);
         }

@@ -6,5 +6,6 @@ public enum Modules
     ClientManagement,
     UnitManagement,
     BalanceManagement,
-    IncomeProcessing
+    IncomeProcessing,
+    OutcomeProcessing
 }

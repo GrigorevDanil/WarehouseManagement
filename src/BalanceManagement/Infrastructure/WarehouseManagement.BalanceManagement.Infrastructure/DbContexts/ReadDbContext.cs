@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.BalanceManagement.Application.Interfaces;
 using WarehouseManagement.BalanceManagement.Contracts.Dtos;
+using WarehouseManagement.Core.Constants;
 
 namespace WarehouseManagement.BalanceManagement.Infrastructure.DbContexts;
 
@@ -24,7 +25,7 @@ public class ReadDbContext(string connectionString) : DbContext, IBalanceReadDbC
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
         
-        modelBuilder.HasDefaultSchema("balance-management");
+        modelBuilder.HasDefaultSchema(Schemas.BalanceManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

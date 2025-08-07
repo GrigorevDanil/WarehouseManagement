@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WarehouseManagement.Core.Abstractions.Outbox;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.Core.Models;
 using WarehouseManagement.Framework.Outbox;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
@@ -33,7 +34,7 @@ public class WriteDbContext(string connectionString) : DbContext, IOutboxDbConte
 
         modelBuilder.ApplyConfiguration(new OutboxMessageConfiguration());
         
-        modelBuilder.HasDefaultSchema("income-processing");
+        modelBuilder.HasDefaultSchema(Schemas.IncomeProcessing);
     }
     
     private ILoggerFactory CreateLoggerFactory() =>

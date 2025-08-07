@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.IncomeProcessing.Application.Interfaces;
 using WarehouseManagement.IncomeProcessing.Contracts.Dtos;
 
@@ -26,7 +27,7 @@ public class ReadDbContext(string connectionString) : DbContext, IIncomeProcessi
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Read") ?? false);
         
-        modelBuilder.HasDefaultSchema("income-processing");
+        modelBuilder.HasDefaultSchema(Schemas.IncomeProcessing);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

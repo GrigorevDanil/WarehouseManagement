@@ -4,7 +4,7 @@ public record IncomeResourceResponse(
     Guid Id, 
     IncomeResourceResourceResponse Resource,
     IncomeResourceUnitResponse Unit,
-    int ResourceStock);
+    int ResourceQuantity);
 
 public record IncomeResourceResourceResponse(
     Guid Id,

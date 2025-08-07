@@ -57,16 +57,16 @@ public static class Registration
     
     private static IServiceCollection AddQuartzServices(this IServiceCollection services)
     {
-        services.AddScoped<IOutboxMessageProcess, OutboxMessageProcess<WriteDbContext>>();
+        services.AddKeyedScoped<IOutboxMessageProcess, OutboxMessageProcess<WriteDbContext>>(Modules.IncomeProcessing);
 
         services.AddQuartz(configure =>
         {
-            var jobKey = new JobKey(nameof(OutboxMessageProcessJob));
+            var jobKey = new JobKey(nameof(Modules.IncomeProcessing) + nameof(OutboxMessageProcessJob));
 
             configure
                 .AddJob<OutboxMessageProcessJob>(jobKey)
                 .AddTrigger(trigger => trigger.ForJob(jobKey).WithSimpleSchedule(
-                    schedule => schedule.WithIntervalInSeconds(1).RepeatForever()));
+                    schedule => schedule.WithIntervalInSeconds(5).RepeatForever()));
         });
 
         services.AddQuartzHostedService(options => { options.WaitForJobsToComplete = true; });

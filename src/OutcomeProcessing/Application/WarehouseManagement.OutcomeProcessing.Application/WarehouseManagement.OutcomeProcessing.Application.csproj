@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BalanceManagement\Contracts\WarehouseManagement.BalanceManagement.Contracts\WarehouseManagement.BalanceManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\ClientManagement\Contracts\WarehouseManagement.ClientManagement.Contracts\WarehouseManagement.ClientManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\ResourceManagement\Contracts\WarehouseManagement.ResourceManagement.Contracts\WarehouseManagement.ResourceManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />
+      <ProjectReference Include="..\..\..\UnitManagement\Contracts\WarehouseManagement.UnitManagement.Contracts\WarehouseManagement.UnitManagement.Contracts.csproj" />
+      <ProjectReference Include="..\..\Contracts\WarehouseManagement.OutcomeProcessing.Contracts\WarehouseManagement.OutcomeProcessing.Contracts.csproj" />
+      <ProjectReference Include="..\..\Domain\WarehouseManagement.OutcomeProcessing.Domain\WarehouseManagement.OutcomeProcessing.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

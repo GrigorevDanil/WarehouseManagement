@@ -91,7 +91,7 @@ public class GetIncomeDocumentsWithPaginationHandler : IQueryHandlerWithResult<P
                             Id: unitDto.Id,
                             Title: unitDto.Title
                             ),
-                        ResourceStock: incomeResourceDto.ResourceStock
+                        ResourceQuantity: incomeResourceDto.ResourceQuantity
                         ));
             }
             

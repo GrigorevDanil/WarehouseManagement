@@ -78,7 +78,7 @@ public class GetIncomeDocumentByIdHandler : IQueryHandlerWithResult<IncomeDocume
                     Id: unitDto.Id,
                     Title: unitDto.Title
                 ),
-                ResourceStock: incomeResourceDto.ResourceStock
+                ResourceQuantity: incomeResourceDto.ResourceQuantity
             ));
     }
 

@@ -78,7 +78,7 @@ public class CreateBalanceHandler : ICommandHandler<Guid, CreateBalanceCommand>
         var balance = new Balance(
             ResourceId.Of(command.ResourceId), 
             UnitId.Of(command.UnitId),
-            Stock.Of(command.ResourceStock).Value
+            Stock.Of(command.ResourceQuantity).Value
         );
         
         var balanceId = await _balanceRepository.AddAsync(balance, cancellationToken);

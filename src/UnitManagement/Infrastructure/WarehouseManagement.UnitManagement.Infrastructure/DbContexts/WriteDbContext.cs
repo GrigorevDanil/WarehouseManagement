@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using WarehouseManagement.Core.Constants;
 using WarehouseManagement.UnitManagement.Domain.Entities;
 
 namespace WarehouseManagement.UnitManagement.Infrastructure.DbContexts;
@@ -21,7 +22,7 @@ public class WriteDbContext(string connectionString) : DbContext
             typeof(WriteDbContext).Assembly,
             type => type.FullName?.Contains("Configurations.Write") ?? false);
         
-        modelBuilder.HasDefaultSchema("unit-management");
+        modelBuilder.HasDefaultSchema(Schemas.UnitManagement);
     }
 
     private ILoggerFactory CreateLoggerFactory() =>

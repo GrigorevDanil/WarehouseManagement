@@ -11,6 +11,6 @@ public class CreateBalanceValidator : AbstractValidator<CreateBalanceCommand>
     {
         RuleFor(x => x.ResourceId).MustBeValidGuid();
         RuleFor(x => x.UnitId).MustBeValidGuid();
-        RuleFor(x => x.ResourceStock).MustBeValueObject(Stock.Of);
+        RuleFor(x => x.ResourceQuantity).MustBeValueObject(Stock.Of);
     }
 }

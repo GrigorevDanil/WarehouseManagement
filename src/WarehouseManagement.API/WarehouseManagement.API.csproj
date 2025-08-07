@@ -34,6 +34,9 @@
       <ProjectReference Include="..\IncomeProcessing\Application\WarehouseManagement.IncomeProcessing.Application\WarehouseManagement.IncomeProcessing.Application.csproj" />
       <ProjectReference Include="..\IncomeProcessing\Infrastructure\WarehouseManagement.IncomeProcessing.Infrastructure\WarehouseManagement.IncomeProcessing.Infrastructure.csproj" />
       <ProjectReference Include="..\IncomeProcessing\Presentation\WarehouseManagement.IncomeProcessing.Presentation\WarehouseManagement.IncomeProcessing.Presentation.csproj" />
+      <ProjectReference Include="..\OutcomeProcessing\Application\WarehouseManagement.OutcomeProcessing.Application\WarehouseManagement.OutcomeProcessing.Application.csproj" />
+      <ProjectReference Include="..\OutcomeProcessing\Infrastructure\WarehouseManagement.OutcomeProcessing.Infrastructure\WarehouseManagement.OutcomeProcessing.Infrastructure.csproj" />
+      <ProjectReference Include="..\OutcomeProcessing\Presentation\WarehouseManagement.OutcomeProcessing.Presentation\WarehouseManagement.OutcomeProcessing.Presentation.csproj" />
       <ProjectReference Include="..\ResourceManagement\Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure\WarehouseManagement.ResourceManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\ResourceManagement\Presentation\WarehouseManagement.ResourceManagement.Presentation\WarehouseManagement.ResourceManagement.Presentation.csproj" />
       <ProjectReference Include="..\Shared\WarehouseManagement.Core\WarehouseManagement.Core.csproj" />

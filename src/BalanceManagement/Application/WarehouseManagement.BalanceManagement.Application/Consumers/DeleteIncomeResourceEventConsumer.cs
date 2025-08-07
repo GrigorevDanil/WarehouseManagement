@@ -18,7 +18,7 @@ public class DeleteIncomeResourceEventConsumer: IConsumer<DeleteIncomeResourceEv
         var command = new ReduceResourceStockBalanceCommand(
             context.Message.ResourceId,
             context.Message.UnitId,
-            context.Message.SubtractedResourceStock);
+            context.Message.SubtractedResourceQuantity);
         
         await _reduceResourceStockBalanceHandler.Handle(command);
     }

@@ -92,7 +92,7 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
             incomeDocumentId,
             ResourceId.Of(command.ResourceId),
             UnitId.Of(command.UnitId),
-            Stock.Of(command.ResourceStock).Value
+            Quantity.Of(command.ResourceQuantity).Value
             );
         
         incomeDocument.AddResource(incomeResource);
@@ -100,7 +100,7 @@ public class AddIncomeResourceHandler : ICommandHandler<Guid, AddIncomeResourceC
         var @event = new AddIncomeResourceEvent(
             incomeResource.ResourceId.Value,
             incomeResource.UnitId.Value,
-            incomeResource.ResourceStock.Value
+            incomeResource.ResourceQuantity.Value
             );
         
         await _outboxRepository.AddAsync(@event, cancellationToken);
